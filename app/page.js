@@ -5,7 +5,7 @@ import Headers from './components/Header';
 import Skills from './components/Skills';
 import Project from './components/Project';
 import Certification from './components/Certification';
-import Footer from './Footer';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (

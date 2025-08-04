@@ -20,6 +20,7 @@ export default function Header() {
     { name: "Education", href: "#education", key: "education" },
     { name: "Skills", href: "#skills", key: "skills" },
     { name: "Projects", href: "#projects", key: "project" },
+    { name: "Certification", href: "#certification", key: "certification" },
   ];
 
   return (
