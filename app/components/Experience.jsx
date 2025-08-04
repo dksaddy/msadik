@@ -1,4 +1,3 @@
-import "../CSS/experience.css";
 
 export default function Experience() {
   const experiences = [
