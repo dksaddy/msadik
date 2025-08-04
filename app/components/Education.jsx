@@ -21,23 +21,22 @@ export default function Education() {
   ];
 
   return (
-    <section
-      id="education"
-      className="scroll-mt-20 w-full bg-gray-900 py-12 px-4 md:px-8 lg:px-32"
-    >
-      <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-blue-400 text-center">
+    <section id="education" className="bg-gray-50 py-12 px-4 md:px-12 pt-20">
+      <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
         Education
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {education.map((edu, idx) => (
           <div
             key={idx}
-            className="bg-gray-800 rounded-xl shadow-lg p-6 transition-colors duration-300 flex flex-col items-center text-center"
+            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center"
           >
-            <h3 className="text-xl font-semibold text-white mb-2">{edu.degree}</h3>
-            <span className="text-blue-300 font-medium mb-1">{edu.institution}</span>
-            <span className="text-sm text-gray-400 mb-2">{edu.year}</span>
-            <span className="text-gray-300">{edu.details}</span>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              {edu.degree}
+            </h3>
+            <p className="text-blue-500 font-medium mb-1">{edu.institution}</p>
+            <p className="text-sm text-gray-500 mb-2">{edu.year}</p>
+            <p className="text-gray-600">{edu.details}</p>
           </div>
         ))}
       </div>

@@ -1,4 +1,3 @@
-
 export default function Experience() {
   const experiences = [
     {
@@ -24,32 +23,22 @@ export default function Experience() {
   ];
 
   return (
-    <section
-      id="experience"
-      className="scroll-mt-20 w-full bg-gray-900 py-12 px-4 md:px-16 lg:px-32"
-    >
-      <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-blue-400 text-center">
+    <section id="experience" className="bg-gray-50 py-12 px-4 md:px-12 pt-20">
+      <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
         Experience
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid gap-6 md:grid-cols-2 max-w-7xl mx-auto">
         {experiences.map((exp, idx) => (
           <div
             key={idx}
-            className="bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 transition-colors duration-300 flex flex-col h-full animate-fade-in-up"
-            style={{ animationDelay: `${idx * 0.15 + 0.1}s`, animationFillMode: "both" }}
+            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6"
           >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-              <div>
-                <h3 className="text-xl font-semibold text-white">
-                  {exp.title}
-                </h3>
-                <span className="text-blue-300 font-medium">{exp.company}</span>
-              </div>
-              <span className="text-sm text-gray-400 mt-2 md:mt-0">
-                {exp.period}
-              </span>
-            </div>
-            <ul className="list-disc pl-5 text-gray-300 space-y-2 mt-2">
+            <h3 className="text-xl font-semibold text-blue-600 mb-1">
+              {exp.title}
+            </h3>
+            <p className="text-gray-700 font-medium">{exp.company}</p>
+            <p className="text-sm text-gray-500 mb-4">{exp.period}</p>
+            <ul className="list-disc list-inside text-gray-600 text-sm space-y-2">
               {exp.details.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
