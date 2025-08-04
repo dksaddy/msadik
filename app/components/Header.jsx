@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [active, setActive] = useState('home'); // Track active menu
+    const [active, setActive] = useState('home');
 
     const menuItems = [
         { name: 'About', href: '#about', key: 'about' },
@@ -13,15 +13,15 @@ export default function Header() {
     ];
 
     return (
-        <nav className="backdrop-blur bg-white/80 border-b border-gray-200 shadow-sm sticky top-0 z-50 transition-all">
+        <nav className="backdrop-blur bg-gray-900 border-b border-gray-800 shadow-sm sticky top-0 z-50 transition-all">
             <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 relative">
                 <a href="https://github.com/dksaddy" className="flex items-center gap-3">
-                    <img src="./busy.gif" className="h-10 w-10 rounded-full border-2 border-blue-500 shadow" alt="Mohiuddin Mohammad Sadik_Software Engineer" />
-                    <span className="text-2xl font-bold tracking-tight text-gray-800 hover:text-blue-600 transition-colors">Mohiuddin Sadik</span>
+                    <img src="./busy.gif" className="h-10 w-10 rounded-full border-2 border-blue-400 shadow" alt="Mohiuddin Mohammad Sadik_Software Engineer" />
+                    <span className="text-2xl font-bold tracking-tight text-gray-100 hover:text-blue-400 transition-colors">Mohiuddin Sadik</span>
                 </a>
                 <button
                     type="button"
-                    className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-600 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-200 transition"
+                    className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-300 rounded-lg md:hidden hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
                     aria-controls="navbar-default"
                     aria-expanded={menuOpen}
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -37,24 +37,24 @@ export default function Header() {
                         w-full
                         md:block md:w-auto
                         absolute left-0 top-[64px] md:static
-                        bg-white md:bg-transparent
+                        bg-gray-900
                         shadow-lg md:shadow-none
                         transition-all duration-300
                         z-50
                     `}
                 >
-                    <ul className="flex flex-col md:flex-row gap-2 md:gap-6 items-center bg-white/90 md:bg-transparent rounded-lg md:rounded-none shadow md:shadow-none p-4 md:p-0 border md:border-0 border-gray-100">
+                    <ul className="flex flex-col md:flex-row gap-2 md:gap-6 items-center bg-gray-900 rounded-lg md:rounded-none shadow md:shadow-none p-4 md:p-0 border md:border-0 border-gray-800">
                         {menuItems.map(item => (
                             <li key={item.key}>
                                 <a
                                     href={item.href}
-                                    className={`relative block w-full py-3 px-4 rounded-lg text-lg font-medium text-gray-700 transition-all
+                                    className={`relative block w-full py-3 px-4 rounded-lg text-lg font-medium text-gray-100 transition-all
                                         ${active === item.key
-                                            ? 'italic text-blue-600 after:w-[80%]'
-                                            : 'hover:text-blue-600'}
-                                        after:content-[''] after:absolute after:left-4 after:bottom-2 after:h-[3px] after:bg-blue-500 after:rounded-full after:transition-all after:duration-300
+                                            ? 'italic text-blue-400 after:w-[80%]'
+                                            : 'hover:text-blue-400'}
+                                        after:content-[''] after:absolute after:left-4 after:bottom-2 after:h-[3px] after:bg-blue-400 after:rounded-full after:transition-all after:duration-300
                                         ${active === item.key ? 'after:w-[80%]' : 'after:w-0'}
-                                        hover:after:w-[80%] md:hover:bg-transparent md:hover:text-blue-600
+                                        hover:after:w-[80%] md:hover:bg-transparent md:hover:text-blue-400
                                     `}
                                     onClick={() => {
                                         setActive(item.key);

@@ -17,5 +17,5 @@
   to { opacity: 1; transform: translateX(0);}
 }
 .animate-fade-in-right {
-  animation: fade-in-right 1s 0.3s ease both;
+  animation: fade-in-right 1s 0.5s ease both;
 }
