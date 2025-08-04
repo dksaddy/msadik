@@ -1,4 +1,5 @@
 import About from './components/About';
+import Education from './components/Education';
 import Experience from './components/Experience';
 import Headers from './components/Header';
 
@@ -8,6 +9,7 @@ export default function Home() {
     <Headers />
     <About />
     <Experience />
+    <Education />
     </>
   );
 }

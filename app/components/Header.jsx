@@ -6,10 +6,9 @@ export default function Header() {
     const [active, setActive] = useState('home'); // Track active menu
 
     const menuItems = [
-        { name: 'Home', href: '#', key: 'home' },
         { name: 'About', href: '#about', key: 'about' },
-        { name: 'Services', href: '#', key: 'services' },
-        { name: 'Pricing', href: '#', key: 'pricing' },
+        { name: 'Experience', href: '#experience', key: 'experience' },
+        { name: 'Education', href: '#education', key: 'education' },
         { name: 'Contact', href: '#', key: 'contact' },
     ];
 
