@@ -7,8 +7,8 @@ export default function Project() {
         "Full-stack web app enabling Q&A, chat, marketplace, and To-let listings with JWT auth and file uploads.",
       techStack: "React, Vite, Express.js, SQL, JWT, Multer, Socket.io",
       githubLinks: {
-        frontend: "https://github.com/your-frontend-link",
-        backend: "https://github.com/your-backend-link",
+        frontend: "https://github.com/dksaddy/frontend",
+        backend:  "https://github.com/dksaddy/backend",
       },
     },
     {
@@ -18,7 +18,7 @@ export default function Project() {
         "Full-stack platform with appointment booking, video calls, prescriptions, and digital payments. Integrated SSLCommerz, Supabase, and GPT-based disease detection feature for primary diagnosis.",
       techStack: "Next.js, MongoDB, Supabase, SSLCommerz, JWT, WebRTC/Jitsi",
       githubLinks: {
-        fullstack: "https://github.com/your-fullstack-link",
+        fullstack: "https://github.com/dksaddy/telecure",
       },
     },
   ];

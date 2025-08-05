@@ -10,7 +10,7 @@ export default function About() {
           <img
             src="./Mohiuddin Mohammad Sadik_Software Engineer.jpg"
             alt="Mohiuddin Mohammad Sadik"
-            className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full border-4 border-blue-400 shadow-lg transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1"
+            className="w-40 h-40 md:w-56 md:h-56 object-cover rounded border-4 border-blue-400 shadow-lg transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1"
           />
           <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-blue-400 text-white text-xs px-4 py-1 rounded-full shadow-md text-center whitespace-nowrap">
             Software Engineer

@@ -4,15 +4,8 @@ export default function Certification() {
       title: "JavaScript Full Stack Mastery (Node.js, React.js, Next.js)",
       institution: "Center for Development of IT Professionals (CDIP), United International University",
       completionDate: "March 2025",
-      verifyLink: "https://example.com/verify",  // Replace with the actual verification link
+      verifyLink: "https://cdip.uiu.ac.bd/verify/",  // Replace with the actual verification link
     },
-    {
-      title: "Advanced React Developer",
-      institution: "Tech University",
-      completionDate: "June 2024",
-      verifyLink: "https://example.com/verify-advanced-react",  // Replace with the actual verification link
-    },
-    // Add more certifications here if needed
   ];
 
   return (

@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <>
     <Headers />
-    <hr />
     <About />
     <Experience />
     <Education />

@@ -10,16 +10,6 @@ export default function Experience() {
         "Conducted training sessions for employees on website management, including order processing, inventory updates, and plugin usage.",
       ],
     },
-    {
-      title: "Frontend Developer",
-      company: "TechNova Solutions",
-      period: "July 2024 - January 2025",
-      details: [
-        "Built responsive user interfaces with React and Tailwind CSS.",
-        "Collaborated with backend developers to integrate RESTful APIs.",
-        "Optimized web applications for speed and accessibility.",
-      ],
-    },
   ];
 
   return (

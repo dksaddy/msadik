@@ -38,7 +38,7 @@ export default function Header() {
           <img
             src="./busy.gif"
             alt="Mohiuddin Mohammad Sadik"
-            className="h-10 w-10 rounded-full border-2 border-blue-400 shadow"
+            className="h-10 w-10 rounded border-2 border-blue-400 shadow"
           />
           <span className="text-2xl font-bold text-gray-900 hover:text-blue-500 transition">
             Mohiuddin Sadik
