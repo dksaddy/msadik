@@ -1,12 +1,12 @@
 export default function Footer() {
     return (
-        <footer className="bg-white text-gray-800 py-8 px-4 md:px-12">
+        <footer className="bg-gray-50 text-gray-800 py-8 px-4 md:px-12">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
                 {/* Left Side: Contact and Links */}
                 <div className="text-center md:text-left mb-6 md:mb-0">
                     <h3 className="text-xl font-semibold mb-2">Mohiuddin Sadik</h3>
                     <p className="text-sm">Full Stack Developer | Software Engineer</p>
-                    <p className="text-sm">Email: example@email.com</p>
+                    <p className="text-sm">Email: msadik3086@gmail.com</p>
                 </div>
 
                 {/* Right Side: Social Media Links */}
@@ -38,7 +38,7 @@ export default function Footer() {
 
                     </a>
                     <a
-                        href="https://linkedin.com/in/dksaddy"
+                        href="https://linkedin.com/in/msadik3086"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-blue-600"

@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-20 flex flex-col-reverse md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-16 lg:px-32 bg-gray-50"
+      className="scroll-mt-20 flex flex-col-reverse md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-16 lg:px-32"
     >
       {/* Left: Image */}
       <div className="flex-1 flex justify-center md:justify-start">
@@ -19,7 +19,7 @@ export default function About() {
       </div>
 
       {/* Right: Text Content */}
-      <div className="flex-1 text-center md:text-left">
+      <div className="bg-white p-10 rounded-lg flex-1 text-center md:text-left">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
           About Me
         </h2>
