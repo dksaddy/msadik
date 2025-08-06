@@ -1,5 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const menuItems = [
+  { name: "About", href: "#about", key: "about" },
+  { name: "Experience", href: "#experience", key: "experience" },
+  { name: "Education", href: "#education", key: "education" },
+  { name: "Skills", href: "#skills", key: "skills" },
+  { name: "Projects", href: "#projects", key: "project" },
+  { name: "Certification", href: "#certification", key: "certification" },
+];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,109 +24,156 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuItems = [
-    { name: "About", href: "#about", key: "about" },
-    { name: "Experience", href: "#experience", key: "experience" },
-    { name: "Education", href: "#education", key: "education" },
-    { name: "Skills", href: "#skills", key: "skills" },
-    { name: "Projects", href: "#projects", key: "project" },
-    { name: "Certification", href: "#certification", key: "certification" },
-  ];
+  const handleNavigation = (href, key) => {
+    setActive(key);
+    setMenuOpen(false);
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? "backdrop-blur-lg shadow-md border-b border-blue-100" : ""
+      className={`fixed top-0 w-full z-50 ${
+        scrolled
+          ? "bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-100"
+          : "bg-white/50 backdrop-blur-md"
       }`}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 relative">
-        {/* Logo + Name */}
-        <a
-          href="https://github.com/dksaddy"
-          className="flex items-center gap-3"
-        >
-          <img
-            src="./busy.gif"
-            alt="Mohiuddin Mohammad Sadik"
-            className="h-10 w-10 rounded border-2 border-blue-400 shadow"
-          />
-          <span className="text-2xl font-bold text-gray-900 hover:text-blue-500 transition">
-            Mohiuddin Sadik
-          </span>
-        </a>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          type="button"
-          className="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-gray-600 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <motion.a
+            href="#home"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-3"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation("#home", "home");
+            }}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d={
-                menuOpen
-                  ? "M6 18L18 6M6 6l12 12"
-                  : "M4 6h16M4 12h16M4 18h16"
-              }
+            <motion.img
+              src="./busy.gif"
+              alt="Mohiuddin Mohammad Sadik"
+              className="h-9 w-9 rounded-full border-2 border-blue-400 shadow-lg"
+              whileHover={{ rotate: 10 }}
+              transition={{ type: "spring", stiffness: 300 }}
             />
-          </svg>
-        </button>
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              Mohiuddin Sadik
+            </span>
+          </motion.a>
 
-        {/* Navigation Links */}
-        <div
-          className={`${
-            menuOpen ? "block" : "hidden"
-          } absolute top-[64px] left-0 w-full md:static md:block md:w-auto z-50 bg-white md:bg-transparent transition-all`}
-        >
-          <ul className="flex flex-col md:flex-row items-center gap-2 md:gap-6 p-4 md:p-0 rounded-lg md:rounded-none border md:border-0 border-blue-100">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
             {menuItems.map((item) => (
-              <li key={item.key}>
-                <a
-                  href={item.href}
-                  className={`relative block w-full py-3 px-4 rounded-lg text-lg font-medium text-gray-800 hover:text-blue-500 transition-all
-                    ${active === item.key ? "italic text-blue-500" : ""}
-                    after:content-[''] after:absolute after:left-4 after:bottom-2 after:h-[3px] after:bg-blue-400 after:rounded-full after:transition-all after:duration-300
-                    ${active === item.key ? "after:w-[80%]" : "after:w-0"}
-                    hover:after:w-[80%]`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setActive(item.key);
-                    setMenuOpen(false);
-                    const el = document.querySelector(item.href);
-                    if (el) {
-                      el.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                      });
-                    }
-                  }}
-                  aria-current={active === item.key ? "page" : undefined}
-                >
-                  {item.name}
-                </a>
-              </li>
+              <motion.a
+                key={item.key}
+                href={item.href}
+                className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors ${
+                  active === item.key
+                    ? "text-blue-600"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation(item.href, item.key);
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item.name}
+                {active === item.key && (
+                  <motion.span
+                    layoutId="activeIndicator"
+                    className="absolute left-0 bottom-0 w-full h-0.5 bg-blue-500"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+              </motion.a>
             ))}
-          </ul>
-        </div>
+          </div>
 
-        {/* Background overlay when mobile menu is open */}
-        {menuOpen && (
-          <div
-            className="fixed inset-0 z-40 bg-black/30 md:hidden"
-            onClick={() => setMenuOpen(false)}
-          />
-        )}
+          {/* Mobile Menu Button */}
+          <motion.button
+            type="button"
+            className="md:hidden p-2 rounded-lg focus:outline-none"
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <svg
+              className="w-6 h-6 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={
+                  menuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
+              />
+            </svg>
+          </motion.button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm md:hidden"
+              onClick={() => setMenuOpen(false)}
+            />
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ type: "spring", bounce: 0, duration: 0.3 }}
+              className="fixed top-16 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg"
+            >
+              <div className="px-6 py-4">
+                <div className="grid gap-2">
+                  {menuItems.map((item) => (
+                    <motion.a
+                      key={item.key}
+                      href={item.href}
+                      className={`block px-4 py-3 rounded-lg text-base font-medium ${
+                        active === item.key
+                          ? "bg-blue-50 text-blue-600"
+                          : "text-gray-700 hover:bg-gray-50"
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavigation(item.href, item.key);
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {item.name}
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
