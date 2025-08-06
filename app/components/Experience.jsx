@@ -5,36 +5,76 @@ export default function Experience() {
       company: "Preferito Perfume",
       period: "February 2025 - June 2025",
       details: [
-        "Developed and deployed a custom e-commerce website using WordPress and WooCommerce, including product listings.",
-        "Installed, configured, and customized WordPress plugins; edited PHP code to tailor functionality to business needs.",
-        "Conducted training sessions for employees on website management, including order processing, inventory updates, and plugin usage.",
+        "Developed and deployed a custom e-commerce website using WordPress and WooCommerce",
+        "Customized WordPress plugins and edited PHP code for business needs",
+        "Trained employees on website management and order processing",
       ],
+      skills: ["WordPress", "WooCommerce", "PHP", "E-commerce"],
     },
+    
   ];
 
   return (
-    <section id="experience" className="py-12 px-4 md:px-12 pt-20">
-      <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
-        Experience
-      </h2>
-      <div className="grid gap-6 md:grid-cols-2 max-w-7xl mx-auto">
-        {experiences.map((exp, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6"
-          >
-            <h3 className="text-xl font-semibold text-blue-600 mb-1">
-              {exp.title}
-            </h3>
-            <p className="text-gray-700 font-medium">{exp.company}</p>
-            <p className="text-sm text-gray-500 mb-4">{exp.period}</p>
-            <ul className="list-disc list-inside text-gray-600 text-sm space-y-2">
-              {exp.details.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+    <section id="experience" className="py-20 px-4 md:px-8 bg-white">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            Work <span className="text-blue-600">Experience</span>
+          </h2>
+          <p className="text-gray-500 max-w-lg mx-auto">
+            My professional journey and contributions
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {experiences.map((exp, idx) => (
+            <div key={idx} className="group">
+              <div className="bg-white rounded-lg border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900">{exp.title}</h3>
+                    <p className="text-blue-600 font-medium">{exp.company}</p>
+                  </div>
+                  <div className="text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full">
+                    {exp.period}
+                  </div>
+                </div>
+
+                <ul className="space-y-3 mb-5">
+                  {exp.details.map((item, i) => (
+                    <li key={i} className="flex items-start text-gray-700">
+                      <svg 
+                        className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" 
+                        />
+                      </svg>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-2">
+                  {exp.skills.map((skill, i) => (
+                    <span 
+                      key={i} 
+                      className="px-3 py-1 text-xs font-medium bg-blue-50 text-blue-600 rounded-full"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
