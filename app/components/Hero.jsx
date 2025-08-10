@@ -11,6 +11,8 @@ export default function Hero() {
     { text: 'Deployment successful!', position: 'bottom-4 right-4 md:bottom-10 md:right-20' },
   ];
 
+  const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
   return (
     <section id="home" className="relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24">
       {/* Console Log Cards */}
@@ -20,7 +22,7 @@ export default function Hero() {
           text={msg.text}
           position={msg.position}
           animation={{
-            y: [0, -10, 0],
+            y: [0, -20, 0],
             transition: {
               duration: 3 + index,
               repeat: Infinity,
@@ -35,10 +37,13 @@ export default function Hero() {
           className="mb-10"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          
+
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="bg-gray-100 rounded-2xl shadow-lg p-6 max-w-sm w-full mx-auto">
+
+          <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">{time}</h2>
+
+          <div className="border border-blue-300 rounded-2xl shadow-lg p-6 max-w-sm w-full mx-auto">
             <div className="flex items-center space-x-4">
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-blue-500">
                 <img
@@ -59,7 +64,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          
+
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
         >
           <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
@@ -73,7 +78,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          
+
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
         >
           <a
