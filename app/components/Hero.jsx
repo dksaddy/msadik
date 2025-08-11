@@ -2,6 +2,12 @@
 import { motion } from 'framer-motion';
 import Typewriter from './Typewriter';
 import ConsoleLogCard from './ConsoleLogCard';
+import MatrixClock from '../helper/Clock';
+import { LuContact } from "react-icons/lu";
+import { FaGithubSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
+import DownloadCV from '../helper/DownloadCV';
 
 export default function Hero() {
   const consoleLogMessages = [
@@ -14,7 +20,7 @@ export default function Hero() {
   const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
   return (
-    <section id="home" className="relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24">
+    <section id="home" className="relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24 lg:py-10">
       {/* Console Log Cards */}
       {consoleLogMessages.map((msg, index) => (
         <ConsoleLogCard
@@ -32,7 +38,7 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 text-center px-6 md:w-4/2">
         <motion.div
           className="mb-10"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -41,11 +47,11 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
 
-          <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">{time}</h2>
+          <MatrixClock />
 
-          <div className="border border-blue-300 rounded-2xl shadow-lg p-6 max-w-sm w-full mx-auto">
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-blue-500">
+          <div className="rounded-lg p-2 max-w-sm w-full mx-auto">
+            <div className="flex items-center space-x-5 shadow-lg rounded-full p-5">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-blue-300">
                 <img
                   src="Mohiuddin Mohammad Sadik_Software Engineer.jpg"
                   alt="Mohiuddin Mohammad Sadik"
@@ -76,18 +82,32 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          className="flex justify-center items-center gap-10 mb-5 p-2 lg:w-1/3 sm:w-full mx-auto rounded-xl"  
+          initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
-
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
         >
-          <a
-            href="#"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-4 rounded-full transition-transform duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Resume
+          <a href="#">
+            <LuContact className="lg:text-4xl text-2xl" />
           </a>
+
+          <a href="https://github.com/dksaddy" target="_blank">
+            <FaGithubSquare className="lg:text-4xl text-2xl" />
+          </a>
+
+          <a href="https://linkedin.com/in/msadik3086" target="_blank">
+            <FaLinkedin className="lg:text-4xl text-2xl" />
+          </a>
+
+          <a href="https://leetcode.com/u/saddypro1/" target="_blank">
+            <SiLeetcode className="lg:text-4xl text-2xl" />
+          </a>
+
         </motion.div>
+
+
+        <DownloadCV />
+
       </div>
     </section>
   );
