@@ -75,7 +75,7 @@ export default function Education() {
             <img
               src="./uiu.jpg"
               alt="uiu"
-              className="w-lg rounded-xl shadow-lg ring-4 ring-blue-200 hover:scale-105 transition-transform duration-300"
+              className="w-lg rounded-xl shadow-lg ring-2 ring-blue-200 hover:scale-105 transition-transform duration-300"
             />
           </motion.div>
 
@@ -104,7 +104,7 @@ export default function Education() {
             </div>
 
             <p className="text-gray-600 mt-2 mb-6">
-              During my studies, I completed several software projects and earned two scholarships for my dedication and hard work.
+            Throughout my academic career, I successfully completed several software projects and was awarded two scholarships in recognition of my dedication and hard work.            
             </p>
 
 
