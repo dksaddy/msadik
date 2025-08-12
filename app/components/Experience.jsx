@@ -1,3 +1,5 @@
+"use client";
+import { motion } from 'framer-motion';
 export default function Experience() {
   const experiences = [
     {
@@ -11,22 +13,51 @@ export default function Experience() {
       ],
       skills: ["WordPress", "WooCommerce", "PHP", "E-commerce"],
     },
-    
+
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3, // gap between each skill animation
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: 10 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section id="experience" className="py-20 px-4 md:px-8 bg-white">
+    <section id="experience" className="py-20 px-4 md:px-8 bg-white overflow-hidden">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             Work <span className="text-blue-600">Experience</span>
           </h2>
           <p className="text-gray-500 max-w-lg mx-auto">
             My professional journey and contributions
           </p>
-        </div>
+        </motion.div>
 
-        <div className="space-y-8">
+        <motion.div
+          className="space-y-8"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
+        >
           {experiences.map((exp, idx) => (
             <div key={idx} className="group">
               <div className="bg-white rounded-lg border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
@@ -43,17 +74,17 @@ export default function Experience() {
                 <ul className="space-y-3 mb-5">
                   {exp.details.map((item, i) => (
                     <li key={i} className="flex items-start text-gray-700">
-                      <svg 
-                        className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
+                      <svg
+                        className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth={2} 
-                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" 
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
                       <span>{item}</span>
@@ -61,20 +92,32 @@ export default function Experience() {
                   ))}
                 </ul>
 
+
                 <div className="flex flex-wrap gap-2">
-                  {exp.skills.map((skill, i) => (
-                    <span 
-                      key={i} 
-                      className="px-3 py-1 text-xs font-medium bg-blue-50 text-blue-600 rounded-full"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  <motion.div
+                    className="flex flex-wrap gap-2"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.5 }} // triggers on scroll in view
+                  >
+                    {exp.skills.map((skill, i) => (
+                      <motion.span
+                        key={i}
+                        variants={itemVariants}
+                        className="px-3 py-1 text-xs font-medium bg-blue-50 text-blue-600 rounded-full"
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </motion.div>
                 </div>
+
+
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

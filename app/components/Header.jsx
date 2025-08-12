@@ -29,19 +29,21 @@ export default function Header() {
     setMenuOpen(false);
     const el = document.querySelector(href);
     if (el) {
-      el.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+      const headerHeight = document.querySelector('nav').offsetHeight;
+      const top = el.offsetTop - headerHeight;
+      window.scrollTo({
+        top: top,
+        behavior: 'smooth',
       });
     }
   };
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-100"
-          : "bg-white/50 backdrop-blur-md"
+          ? "bg-white/80 backdrop-blur-sm shadow-sm border-b border-gray-100"
+          : "bg-white shadow-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -57,13 +59,6 @@ export default function Header() {
               handleNavigation("#home", "home");
             }}
           >
-            <motion.img
-              src="./busy.gif"
-              alt="Mohiuddin Mohammad Sadik"
-              className="h-9 w-9 rounded-full border-2 border-blue-400 shadow-lg"
-              whileHover={{ rotate: 10 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Mohiuddin Sadik
             </span>
