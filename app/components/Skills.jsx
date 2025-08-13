@@ -4,6 +4,7 @@ import {
   FaCode,
   FaCogs,
   FaMoneyCheckAlt,
+  FaTools,
   FaToolbox,
   FaReact,
   FaHtml5,
@@ -71,7 +72,7 @@ const techIcons = {
 const skills = [
   {
     name: "Languages",
-    icon: <FaCode className="text-red-400 text-4xl" />,
+    icon: <FaCode className="text-blue-400 text-4xl" />,
     items: ["JavaScript", "TypeScript", "Python", "C", "C++", "Java"],
   },
   {
@@ -81,7 +82,7 @@ const skills = [
   },
   {
     name: "Backend",
-    icon: <FaCogs className="text-gray-400 text-4xl" />,
+    icon: <FaCogs className="text-blue-400 text-4xl" />,
     items: [
       "Node.js", "Express.js", "JWT Authentication", "SSLCommerz", "Jitsi", "Socket.io",
       "MongoDB", "SQL (MySQL/PostgreSQL)"
@@ -89,7 +90,7 @@ const skills = [
   },
   {
     name: "Tools",
-    icon: <FaToolbox className="text-blue-400 text-4xl" />,
+    icon: <FaTools className="text-blue-400 text-4xl" />,
     items: ["Postman", "VS Code", "Netlify", "Vercel", "NPM", "Git", "GitHub", "Supabase", "Multer"],
   },
 ];
@@ -120,13 +121,15 @@ export default function Skills() {
             <motion.div
               key={index}
               className="relative group"
-              initial={{opacity: 0, x: 50}}
-              whileInView={{opacity: 1, x: 0}}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: (index + 1) * 0.1 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: (index + 1) * 0.12 }}
             >
-              <div className="relative h-full rounded-xl border border-gray-300 transition-all duration-300 group-hover:-translate-y-1 p-6">
+              <div className="relative h-full rounded-xl border border-gray-300 transition-all duration-300 
+              group-hover:-translate-y-1 p-6 hover:shadow-xl"
+              >
                 <div className="flex items-center mb-6">
-                  <div className={`p-3 ${skill.gradient} rounded-lg text-white`}>
+                  <div className={`p-3 rounded-lg text-white`}>
                     {skill.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 ml-4">
@@ -140,17 +143,26 @@ export default function Skills() {
                       icon: <FaToolbox />,
                       color: "bg-gray-300 text-black",
                     };
+
                     return (
-                      <div
+                      <motion.div
                         key={i}
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.4,
+                          ease: "easeOut",
+                          delay: i * 0.1, // stagger the badges
+                        }}
                         className={`flex items-center gap-2 px-3 py-2 rounded-lg ${tech.color} shadow-sm hover:shadow-md transition-all duration-200`}
                       >
                         <span className="text-base">{tech.icon}</span>
                         <span className="text-sm font-medium">{item}</span>
-                      </div>
+                      </motion.div>
                     );
                   })}
                 </div>
+
               </div>
             </motion.div>
           ))}
