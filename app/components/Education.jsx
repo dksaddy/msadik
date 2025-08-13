@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaBookOpen } from "react-icons/fa";
+import SectionHeader from '../helper/SectionHeader';
+
 
 export default function Education() {
   const education = {
@@ -45,20 +46,8 @@ export default function Education() {
       className="py-15 px-4 md:px-8 lg:px-16 bg-white overflow-hidden"
     >
       <div className="mx-auto">
-        {/* Section Heading */}
-        <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-            EDUCATION <span className="text-blue-600">& LEARNING</span>
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
-            My academic background and relevant coursework
-          </p>
-        </motion.div>
+
+        <SectionHeader header="Education & LEARNING" tittle="A Short Details About My Graduation" />
 
         {/* Education Card */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
@@ -104,7 +93,7 @@ export default function Education() {
             </div>
 
             <p className="text-gray-600 mt-2 mb-6">
-            Throughout my academic career, I successfully completed several software projects and was awarded two scholarships in recognition of my dedication and hard work.            
+              Throughout my academic career, I successfully completed several software projects and was awarded two scholarships in recognition of my dedication and hard work.
             </p>
 
 

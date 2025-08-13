@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import SectionHeader from '../helper/SectionHeader';
 import {
   FaCode,
   FaCogs,
@@ -100,20 +101,7 @@ export default function Skills() {
     <section id="skills" className="py-10 px-4 md:px-8 lg:px-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
-        {/* Section Heading */}
-        <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-            TECH <span className="text-blue-600">STACKS</span>
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
-            My academic background and relevant coursework
-          </p>
-        </motion.div>
+        <SectionHeader header="Tech STACKS" tittle="Language, Framwork & Tools I Use For Work"/>
 
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">

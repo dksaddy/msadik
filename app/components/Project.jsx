@@ -1,5 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
+import SectionHeader from '../helper/SectionHeader';
+
 export default function Projects() {
   const projects = [
     {
@@ -29,20 +31,7 @@ export default function Projects() {
     <section id="projects" className="py-15 px-4 md:px-8 lg:px-15 bg-white">
       <div className="max-w-7xl mx-auto">
 
-        {/* Section Heading */}
-        <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-            FEATURED <span className="text-blue-600">PROJECTS</span>
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
-            My academic background and relevant coursework
-          </p>
-        </motion.div>
+        <SectionHeader header="Featured PROJECTS" tittle="A Little More About Me"/>
 
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project, idx) => (

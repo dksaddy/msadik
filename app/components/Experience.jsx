@@ -1,5 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
+import SectionHeader from '../helper/SectionHeader';
+
 export default function Experience() {
   const experiences = [
     {
@@ -38,19 +40,7 @@ export default function Experience() {
     <section id="experience" className="py-20 px-4 md:px-8 bg-white overflow-hidden">
       <div className="max-w-4xl mx-auto">
 
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-            WORK <span className="text-blue-600">EXPERIENCE</span>
-          </h2>
-          <p className="text-gray-500 max-w-lg mx-auto">
-            My professional journey and contributions
-          </p>
-        </motion.div>
+        <SectionHeader header="Work EXPERIENCE" tittle="My Experience and Contribution"/>
 
         <motion.div
           className="space-y-8"

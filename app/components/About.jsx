@@ -1,20 +1,13 @@
 'use client';
 import { motion } from 'framer-motion';
+import SectionHeader from '../helper/SectionHeader';
 
 export default function About() {
   return (
-    <section id="about" className="py-15 bg-white overflow-hidden">
+    <section id="about" className="py-10 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-            A Little More About Me
-          </h2>
-        </motion.div>
+
+        <SectionHeader header="About ME" tittle="A Little More About Me" mb="mb-2"/>
 
         <div className="relative md:flex md:items-center max-w-4xl mx-auto">
           {/* Image */}
