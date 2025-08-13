@@ -47,38 +47,37 @@ export default function Projects() {
           {projects.map((project, idx) => (
             <div key={idx} className="group relative">
 
-              <div className="relative h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 overflow-hidden">
+              <div className="relative h-full rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 overflow-hidden">
                 <div className="p-6">
 
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-  {/* Title + Role */}
-  <div>
-    <h3 className="text-2xl font-bold text-gray-900">{project.title}</h3>
-    <p className="text-indigo-600 font-medium">{project.role}</p>
-  </div>
+                    {/* Title + Role */}
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-800">{project.title}</h3>
+                      <p className="text-indigo-600 font-medium">{project.role}</p>
+                    </div>
 
-  {/* GitHub/Deployed Links */}
-  <div className="flex space-x-4">
-    {Object.entries(project.githubLinks).map(([key, value]) => (
-      <a
-        key={key}
-        href={value}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex flex-col items-center p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-        aria-label={`${key} code`}
-      >
-        {key.toLowerCase().includes("live") || key.toLowerCase().includes("deploy") ? (
-          <GoRocket className="text-xl text-black" />
-        ) : (
-          <FaGithub className="text-xl text-black" />
-        )}
-        <span className="mt-1 text-xs text-gray-600 capitalize font-bold">{key}</span>
-      </a>
-    ))}
-  </div>
-</div>
-
+                    {/* GitHub/Deployed Links */}
+                    <div className="flex space-x-4">
+                      {Object.entries(project.githubLinks).map(([key, value]) => (
+                        <a
+                          key={key}
+                          href={value}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex flex-col items-center p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                          aria-label={`${key} code`}
+                        >
+                          {key.toLowerCase().includes("live") || key.toLowerCase().includes("deploy") ? (
+                            <GoRocket className="text-xl text-black" />
+                          ) : (
+                            <FaGithub className="text-xl text-black" />
+                          )}
+                          <span className="mt-1 text-xs text-gray-600 capitalize font-bold">{key}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
 
                   <p className="text-gray-700 mb-6">{project.description}</p>
 
@@ -86,7 +85,7 @@ export default function Projects() {
                     <h4 className="text-sm font-semibold text-gray-500 mb-2">TECH STACK</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.map((tech, i) => (
-                        <span key={i} className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full">
+                        <span key={i} className="px-3 py-1 text-xs font-medium bg-yellow-200 text-gray-800 rounded-full">
                           {tech}
                         </span>
                       ))}

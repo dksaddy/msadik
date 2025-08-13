@@ -53,7 +53,7 @@ export default function Experience() {
               <div className="bg-white rounded-lg border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">{exp.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-800">{exp.title}</h3>
                     <p className="text-blue-600 font-medium">{exp.company}</p>
                   </div>
                   <div className="text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full">
@@ -95,7 +95,7 @@ export default function Experience() {
                       <motion.span
                         key={i}
                         variants={itemVariants}
-                        className="px-3 py-1 text-xs font-medium bg-blue-50 text-blue-600 rounded-full"
+                        className="px-3 py-1 text-xs font-medium bg-yellow-200 text-gray-800 rounded-full"
                       >
                         {skill}
                       </motion.span>

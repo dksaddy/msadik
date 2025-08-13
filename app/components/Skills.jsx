@@ -113,14 +113,14 @@ export default function Skills() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: (index + 1) * 0.12 }}
             >
-              <div className="relative h-full rounded-xl border border-gray-300 transition-all duration-300 
+              <div className="relative h-full rounded-xl shadow-lg border border-gray-200 transition-all duration-300 
               group-hover:-translate-y-1 p-6 hover:shadow-xl"
               >
                 <div className="flex items-center mb-6">
                   <div className={`p-3 rounded-lg text-white`}>
                     {skill.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 ml-4">
+                  <h3 className="text-2xl font-bold text-gray-800 ml-4">
                     {skill.name}
                   </h3>
                 </div>

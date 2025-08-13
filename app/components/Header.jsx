@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const menuItems = [
-  { name: "About", href: "#about", key: "about" },
-  { name: "Experience", href: "#experience", key: "experience" },
-  { name: "Education", href: "#education", key: "education" },
-  { name: "Skills", href: "#skills", key: "skills" },
-  { name: "Projects", href: "#projects", key: "project" },
-  { name: "Certification", href: "#certification", key: "certification" },
+  { name: "ABOUT", href: "#about", key: "about" },
+  { name: "EXPERIENCE", href: "#experience", key: "experience" },
+  { name: "EDUCATION", href: "#education", key: "education" },
+  { name: "STACK", href: "#skills", key: "skills" },
+  { name: "PROJECT", href: "#projects", key: "project" },
+  { name: "CERTIFICATION", href: "#certification", key: "certification" },
+  { name: "CONTACT", href: "#contact", key: "contact" },
 ];
 
 export default function Header() {

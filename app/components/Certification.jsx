@@ -1,57 +1,96 @@
+import SectionHeader from "../helper/SectionHeader";
+
 export default function Certification() {
   const certifications = [
     {
       title: "JavaScript Full Stack Mastery (Node.js, React.js, Next.js)",
       institution: "Center for Development of IT Professionals (CDIP), United International University",
       completionDate: "March 2025",
+      stack: ["React", "HTML5", "CSS3", "Javascript", "Prisma", "NextJS"],
       verifyLink: "https://cdip.uiu.ac.bd/verify/",
+      logo: "cdip.jpeg", // image file in /public or use full URL
+    },
+    {
+      title: "Web Design and Development for Freelancing Level 3",
+      institution: "National Skills Development Authority",
+      completionDate: "August 2025",
+      stack: ["Bootstrap", "HTML5", "CSS3", "Javascript", "UI", "UX"],
+      verifyLink: "#",
+      logo: "nsda.png", // image file in /public or use full URL
     },
   ];
 
   return (
-    <section id="certification" className="py-15 px-4 md:px-8 lg:px-15 bg-white">
+    <section id="certification" className="py-16 px-4 md:px-8 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 text-sm font-medium text-blue-600 bg-blue-100 rounded-full mb-4">
-            Credentials
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            My <span className="text-blue-600">Certifications</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto rounded-full"></div>
-        </div>
+        <SectionHeader
+          header="Certification & RECOGNITION"
+          tittle="The Recognition I Have Achieved Over Courses"
+        />
 
         <div className="grid gap-8 md:grid-cols-2">
           {certifications.map((cert, index) => (
-            <div 
-              key={index}
-              className="relative group"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
-              
-              <div className="relative h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 p-6 border-l-4 border-blue-500">
-                <div className="flex items-start gap-4 mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">{cert.title}</h3>
-                    <p className="text-blue-600 font-medium">{cert.institution}</p>
+            <div key={index} className="relative group">
+              <div className="relative h-full border border-gray-200 shadow-lg rounded-xl hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 p-6">
+                
+                {/* Header: Logo + Institution */}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4 border-b border-gray-300 pb-4">
+                  <img
+                    src={cert.logo}
+                    alt="Institution Logo"
+                    className="w-15 h-15 rounded object-cover border border-blue-400"
+                  />
+                  <p className="text-sm font-semibold text-gray-800">{cert.institution}</p>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-base font-semibold text-gray-800 mb-4">{cert.title}</h3>
+
+                {/* Completion date */}
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 text-xs font-bold bg-gray-100 text-gray-600 rounded-full">
+                    Completed: {cert.completionDate}
+                  </span>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="mt-6 mb-4">
+                  <h4 className="text-sm font-semibold text-gray-500 mb-2">TECH STACK</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {cert.stack.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-xs font-medium bg-yellow-200 text-gray-800 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-6">
-                  <div className="px-3 py-1.5 bg-blue-50 rounded-full w-fit">
-                    <p className="text-sm font-medium text-blue-600">Completed: {cert.completionDate}</p>
-                  </div>
-                  
+                {/* Verify Link Button */}
+                <div className="text-right">
                   <a
                     href={cert.verifyLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium w-fit"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold rounded-md transition-colors"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    Verify Link
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
                     </svg>
-                    Verify Certificate
                   </a>
                 </div>
               </div>

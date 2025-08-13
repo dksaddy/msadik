@@ -112,7 +112,7 @@ export default function Education() {
                 <motion.span
                   key={index}
                   variants={itemVariants}
-                  className="px-3 py-1 text-sm font-medium bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100 transition-colors duration-200"
+                  className="px-3 py-1 text-sm font-medium bg-yellow-200 text-gray-800 rounded-full hover:bg-blue-100 transition-colors duration-200"
                 >
                   {course}
                 </motion.span>
