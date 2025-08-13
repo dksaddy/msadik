@@ -44,9 +44,9 @@ export default function Experience() {
 
         <motion.div
           className="space-y-8"
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
         >
           {experiences.map((exp, idx) => (
             <div key={idx} className="group">

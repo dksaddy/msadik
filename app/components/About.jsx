@@ -15,7 +15,7 @@ export default function About() {
             className="relative z-10 md:w-1/2 mb-8 md:mb-0"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
             
           >
             <div className="relative group">
@@ -33,7 +33,7 @@ export default function About() {
             className="relative z-10 md:w-3/4 bg-white text-gray-800 rounded-xl shadow-2xl p-8 md:p-12"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
             
           >
             <h3 className="text-2xl font-bold mb-4">Software Engineer & Lifelong Learner</h3>

@@ -55,11 +55,7 @@ export default function Education() {
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 1,
-              ease: [0.25, 1, 0.5, 1],
-              delay: 0.2,
-            }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
             <img
               src="./uiu.jpg"
@@ -73,11 +69,8 @@ export default function Education() {
             className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 1,
-              ease: [0.25, 1, 0.5, 1],
-              delay: 0.2,
-            }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+
           >
 
             <div className="text-left">
