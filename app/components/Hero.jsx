@@ -17,8 +17,6 @@ export default function Hero() {
     { text: 'Deployment successful!', position: 'bottom-4 right-4 md:bottom-10 md:right-20' },
   ];
 
-  const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
   return (
     <section id="home" className="relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24 lg:py-10">
       {/* Console Log Cards */}
@@ -44,7 +42,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
 
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
         >
 
           <MatrixClock />
