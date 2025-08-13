@@ -45,7 +45,7 @@ export default function Experience() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            Work <span className="text-blue-600">Experience</span>
+            WORK <span className="text-blue-600">EXPERIENCE</span>
           </h2>
           <p className="text-gray-500 max-w-lg mx-auto">
             My professional journey and contributions

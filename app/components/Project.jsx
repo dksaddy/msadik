@@ -24,7 +24,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-16 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-white to-indigo-50">
+    <section id="projects" className="py-15 px-4 md:px-8 lg:px-15 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-100 rounded-full mb-4">

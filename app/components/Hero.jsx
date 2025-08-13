@@ -75,7 +75,7 @@ export default function Hero() {
             <Typewriter texts={["FULL STACK DEVELOPER", "FRONTEND DEVELOPER", "MOBILE APPS DEVELOPER"]} />
           </h1>
           <p className="text-lg max-w-2xl mx-auto text-gray-600 mb-10">
-            "Hey, This is Sadik a passionate software engineer want to collaborate and invent great thing to ease Life."
+            "Hey, This is Sadik a passionate software engineer want to collaborate and develop great thing to ease Life."
           </p>
         </motion.div>
 

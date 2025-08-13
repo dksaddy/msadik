@@ -5,16 +5,11 @@ export default function Certification() {
       institution: "Center for Development of IT Professionals (CDIP), United International University",
       completionDate: "March 2025",
       verifyLink: "https://cdip.uiu.ac.bd/verify/",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
     },
   ];
 
   return (
-    <section id="certification" className="py-16 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-white to-blue-50">
+    <section id="certification" className="py-15 px-4 md:px-8 lg:px-15 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 text-sm font-medium text-blue-600 bg-blue-100 rounded-full mb-4">
@@ -36,9 +31,6 @@ export default function Certification() {
               
               <div className="relative h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 p-6 border-l-4 border-blue-500">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="p-3 bg-blue-100 rounded-lg text-blue-600">
-                    {cert.icon}
-                  </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900">{cert.title}</h3>
                     <p className="text-blue-600 font-medium">{cert.institution}</p>

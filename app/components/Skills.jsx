@@ -107,7 +107,7 @@ export default function Skills() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-            Skills <span className="text-blue-600">& Stack</span>
+            TECH <span className="text-blue-600">STACKS</span>
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
             My academic background and relevant coursework

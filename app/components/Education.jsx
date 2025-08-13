@@ -50,10 +50,10 @@ export default function Education() {
           className="text-center mb-10"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-            Education <span className="text-blue-600">& Learning</span>
+            EDUCATION <span className="text-blue-600">& LEARNING</span>
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
             My academic background and relevant coursework
