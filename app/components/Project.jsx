@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion"
 export default function Projects() {
   const projects = [
     {
@@ -26,25 +28,31 @@ export default function Projects() {
   return (
     <section id="projects" className="py-15 px-4 md:px-8 lg:px-15 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-100 rounded-full mb-4">
-            My Work
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Featured <span className="text-indigo-600">Projects</span>
+
+        {/* Section Heading */}
+        <motion.div
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+            FEATURED <span className="text-blue-600">PROJECTS</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-indigo-400 to-purple-500 mx-auto rounded-full"></div>
-        </div>
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            My academic background and relevant coursework
+          </p>
+        </motion.div>
 
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project, idx) => (
             <div key={idx} className="group relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
-              
+
               <div className="relative h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 overflow-hidden">
                 {/* Accent bar */}
                 <div className={`${project.accentColor} h-2 w-full`}></div>
-                
+
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>

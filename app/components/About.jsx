@@ -11,7 +11,7 @@ export default function About() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           
         >
-          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
             A Little More About Me
           </h2>
         </motion.div>
@@ -26,7 +26,7 @@ export default function About() {
             
           >
             <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+              <div className="absolute -inset-0.5 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
               <img
                 src="./Mohiuddin Mohammad Sadik_Software Engineer1.jpg"
                 alt="Mohiuddin Mohammad Sadik"
