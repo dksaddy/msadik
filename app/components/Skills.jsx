@@ -96,7 +96,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-15 px-4 md:px-8 lg:px-10 bg-white overflow-hidden">
+    <section id="skills" className="py-10 px-4 md:px-8 lg:px-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Heading */}
@@ -122,9 +122,9 @@ export default function Skills() {
               className="relative group"
               initial={{opacity: 0, x: 50}}
               whileInView={{opacity: 1, x: 0}}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: (index + 1) * 0.2 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: (index + 1) * 0.1 }}
             >
-              <div className="relative h-full rounded-xl border border-gray-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 p-6">
+              <div className="relative h-full rounded-xl border border-gray-300 transition-all duration-300 group-hover:-translate-y-1 p-6">
                 <div className="flex items-center mb-6">
                   <div className={`p-3 ${skill.gradient} rounded-lg text-white`}>
                     {skill.icon}
