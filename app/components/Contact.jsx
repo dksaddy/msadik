@@ -62,19 +62,33 @@ export default function ContactTerminal() {
     }, [currentLine, displayed, statusMessage]);
 
     const handleKeyDown = (e, field) => {
-        if (e.key === "Enter" && inputValues[field].trim() !== "") {
-            if (field === "confirm") {
-                if (inputValues.confirm.toLowerCase() === "okay") {
-                    setStatusMessage("✅ Message sent successfully!");
-                    console.log("Form Data:", inputValues);
-                } else {
-                    setStatusMessage("❌ Type 'okay' to send!");
+        if (e.key === "Enter") {
+            e.preventDefault(); // Prevent Enter from adding a new line in inputs
+
+            // Special handling for message
+            if (field === "message") {
+                if (!inputValues.message.includes("#100#")) {
+                    setStatusMessage("Type #100# at the end to finish your message");
                     return;
                 }
             }
-            setCurrentLine((prev) => prev + 1);
+
+            if (inputValues[field].trim() !== "") {
+                if (field === "confirm") {
+                    if (inputValues.confirm.toLowerCase() === "okay") {
+                        setStatusMessage("✅ Message sent successfully!");
+                        console.log("Form Data:", inputValues);
+                    } else {
+                        setStatusMessage("❌ Type 'okay' to send!");
+                        return;
+                    }
+                }
+
+                setCurrentLine((prev) => prev + 1);
+            }
         }
     };
+
 
     const handleChange = (e, field) => {
         setInputValues({ ...inputValues, [field]: e.target.value });
@@ -99,9 +113,9 @@ export default function ContactTerminal() {
             <div className="container mx-auto px-6 flex justify-center items-center">
                 <motion.div
                     className="w-full max-w-2xl rounded-lg shadow-lg overflow-hidden"
-                    initial={{ opacity: 0, y: 150 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: "easeOut", delay: 0.2}}
+                    initial={{ opacity: 0, scale: .4 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                 >
                     {/* Terminal header */}
                     <div className="flex items-center justify-between bg-black px-3 py-1">
@@ -117,44 +131,54 @@ export default function ContactTerminal() {
                     {/* Terminal body */}
                     <div
                         ref={terminalRef}
-                        className="p-3 font-mono text-green-400 h-96 overflow-y-auto flex flex-col space-y-1"
+                        className="p-3 font-mono text-green-400 h-96 overflow-y-auto"
                         style={{
                             backgroundImage: "url('/stack.gif')",
                             backgroundSize: "cover",
                             backgroundPosition: "center",
+                            wordBreak: "break-word",
                         }}
                     >
                         {lines.map((line, index) => (
-                            <div
-                                key={index}
-                                className="flex items-center flex-nowrap whitespace-nowrap w-full"
-                            >
-                                <span className="flex-shrink-0">{displayed[index]}</span>
+                            <div key={index} className="w-full mb-1 break-words">
+                                <span>{displayed[index]}</span>
 
-                                {line.field &&
-                                    index === currentLine &&
-                                    displayed[index] === line.text && (
-                                        <>
+                                {line.field && index === currentLine && displayed[index] === line.text && (
+                                    <>
+                                        {line.field === "message" ? (
+                                            <textarea
+                                                value={inputValues[line.field]}
+                                                onChange={(e) => handleChange(e, line.field)}
+                                                onKeyDown={(e) => handleKeyDown(e, line.field)}
+                                                className="bg-transparent text-green-400 outline-none w-full resize-none"
+                                                rows={3}
+                                                placeholder="Type your message and add #100# at the end"
+                                                autoFocus={line.field !== "name"}
+                                            />
+                                        ) : (
                                             <input
                                                 type="text"
                                                 value={inputValues[line.field]}
                                                 onChange={(e) => handleChange(e, line.field)}
                                                 onKeyDown={(e) => handleKeyDown(e, line.field)}
-                                                className="bg-transparent text-green-400 outline-none flex-shrink min-w-[80px]"
-                                                autoFocus
+                                                className="bg-transparent text-green-400 outline-none w-full"
+                                                autoFocus={line.field !== "name"}
                                             />
-                                            <span className="animate-pulse">_</span>
-                                        </>
-                                    )}
+                                        )}
+                                        <span className="animate-pulse">_</span>
+                                    </>
+                                )}
+
 
                                 {line.field && index < currentLine && (
-                                    <span className="flex-shrink-0">{inputValues[line.field]}</span>
+                                    <span>{inputValues[line.field]}</span>
                                 )}
                             </div>
                         ))}
 
-                        <div className="mt-4 text-green-300 font-mono">{statusMessage}</div>
+                        <div className="mt-4 text-green-300 text-center font-mono">{statusMessage}</div>
                     </div>
+
 
                 </motion.div>
             </div>
