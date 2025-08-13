@@ -109,9 +109,9 @@ export default function Skills() {
             <motion.div
               key={index}
               className="relative group"
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: index % 2 !== 0 ? -80 : 80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: (index + 1) * 0.12 }}
+              transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
             >
               <div className="relative h-full rounded-xl shadow-lg border border-gray-200 transition-all duration-300 
               group-hover:-translate-y-1 p-6 hover:shadow-xl"

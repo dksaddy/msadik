@@ -38,14 +38,20 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-15 px-4 md:px-8 lg:px-15 bg-white">
+    <section id="projects" className="py-15 px-4 md:px-8 lg:px-15 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         <SectionHeader header="Featured PROJECTS" tittle="A Little More About Me" />
 
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project, idx) => (
-            <div key={idx} className="group relative">
+            <motion.div 
+             key={idx} 
+             className="group relative"
+             initial={{ opacity: 0, x: idx % 2 === 0 ? -80 : 80 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            >
 
               <div className="relative h-full rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 overflow-hidden">
                 <div className="p-6">
@@ -93,7 +99,7 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

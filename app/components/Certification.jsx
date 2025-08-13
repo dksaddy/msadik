@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion"
 import SectionHeader from "../helper/SectionHeader";
 
 export default function Certification() {
@@ -21,7 +23,7 @@ export default function Certification() {
   ];
 
   return (
-    <section id="certification" className="py-16 px-4 md:px-8 lg:px-16 bg-white">
+    <section id="certification" className="py-16 px-4 md:px-8 lg:px-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           header="Certification & RECOGNITION"
@@ -30,7 +32,13 @@ export default function Certification() {
 
         <div className="grid gap-8 md:grid-cols-2">
           {certifications.map((cert, index) => (
-            <div key={index} className="relative group">
+            <motion.div 
+             key={index} 
+             className="relative group"
+             initial={{ opacity: 0, x: index % 2 !== 0 ? -80 : 80 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            >
               <div className="relative h-full border border-gray-200 shadow-lg rounded-xl hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 p-6">
                 
                 {/* Header: Logo + Institution */}
@@ -94,7 +102,7 @@ export default function Certification() {
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
