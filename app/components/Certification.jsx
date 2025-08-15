@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion"
 import SectionHeader from "../helper/SectionHeader";
+import {containerVariants, itemVariants} from "../utils/SpanAnimation"
 
 export default function Certification() {
   const certifications = [
@@ -32,15 +33,15 @@ export default function Certification() {
 
         <div className="grid gap-8 md:grid-cols-2">
           {certifications.map((cert, index) => (
-            <motion.div 
-             key={index} 
-             className="relative group"
-             initial={{ opacity: 0, x: index % 2 !== 0 ? -80 : 80 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            <motion.div
+              key={index}
+              className="relative group"
+              initial={{ opacity: 0, x: index % 2 !== 0 ? -80 : 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
             >
               <div className="relative h-full border border-gray-200 shadow-lg rounded-xl hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 p-6">
-                
+
                 {/* Header: Logo + Institution */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4 border-b border-gray-300 pb-4">
                   <img
@@ -64,16 +65,25 @@ export default function Certification() {
                 {/* Tech Stack */}
                 <div className="mt-6 mb-4">
                   <h4 className="text-sm font-semibold text-gray-500 mb-2">TECH STACK</h4>
-                  <div className="flex flex-wrap gap-2">
+
+                  <motion.div
+                    className="flex flex-wrap gap-2"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.5 }} // triggers on scroll in view
+                  >
                     {cert.stack.map((tech, i) => (
-                      <span
+                      <motion.span
                         key={i}
+                        variants={itemVariants}
                         className="px-3 py-1 text-xs font-medium bg-yellow-200 text-gray-800 rounded-full"
                       >
                         {tech}
-                      </span>
+                      </motion.span>
                     ))}
-                  </div>
+                  </motion.div>
+
                 </div>
 
                 {/* Verify Link Button */}

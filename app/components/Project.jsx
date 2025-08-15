@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import SectionHeader from '../helper/SectionHeader';
 import { GoRocket } from "react-icons/go";
 import { FaGithub } from "react-icons/fa6";
+import { containerVariants, itemVariants } from "../utils/SpanAnimation";
 
 export default function Projects() {
   const projects = [
@@ -45,12 +46,12 @@ export default function Projects() {
 
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project, idx) => (
-            <motion.div 
-             key={idx} 
-             className="group relative"
-             initial={{ opacity: 0, x: idx % 2 === 0 ? -80 : 80 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            <motion.div
+              key={idx}
+              className="group relative"
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -80 : 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
             >
 
               <div className="relative h-full rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 overflow-hidden">
@@ -89,14 +90,28 @@ export default function Projects() {
 
                   <div className="mb-6">
                     <h4 className="text-sm font-semibold text-gray-500 mb-2">TECH STACK</h4>
-                    <div className="flex flex-wrap gap-2">
+
+                    <motion.div
+                      className="flex flex-wrap gap-2"
+                      variants={containerVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false, amount: 0.5 }} // triggers on scroll in view
+                    >
                       {project.techStack.map((tech, i) => (
-                        <span key={i} className="px-3 py-1 text-xs font-medium bg-yellow-200 text-gray-800 rounded-full">
+                        <motion.span
+                          key={i}
+                          className="px-3 py-1 text-xs font-medium bg-yellow-200 text-gray-800 rounded-full"
+                          variants={itemVariants}
+                        >
                           {tech}
-                        </span>
+                        </motion.span>
                       ))}
-                    </div>
+                    </motion.div>
+
                   </div>
+
+
                 </div>
               </div>
             </motion.div>

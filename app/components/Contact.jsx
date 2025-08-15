@@ -17,7 +17,7 @@ export default function ContactTerminal() {
     const terminalRef = useRef(null);
 
     const lines = [
-        { text: "Hey, I am Sadik. For reaching me submit your message", field: null },
+        { text: "Hey, I am Sadik. For reaching me submit your message better click/tap my mail and send me direct mail.", field: null },
         { text: "Your name: ", field: "name" },
         { text: "Your email: ", field: "email" },
         { text: "Subject: ", field: "subject" },
@@ -133,6 +133,12 @@ export default function ContactTerminal() {
                         <div
                             ref={terminalRef}
                             className="p-3 font-mono text-green-400 h-96 overflow-y-auto bg-black"
+                            // style={{
+                            //     backgroundImage: "url('/termi3.gif')",
+                            //     backgroundSize: "cover",
+                            //     backgroundPosition: "center",
+                            //     wordBreak: "break-word",
+                            // }}
                         >
                             {lines.map((line, index) => (
                                 <div key={index} className="w-full mb-1 break-words">
