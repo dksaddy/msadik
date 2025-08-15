@@ -1,20 +1,13 @@
 'use client';
 import { motion } from 'framer-motion';
+import SectionHeader from '../helper/SectionHeader';
 
 export default function About() {
   return (
     <section id="about" className="py-15 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          
-        >
-          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-            A Little More About Me
-          </h2>
-        </motion.div>
+
+        <SectionHeader header="About ME" tittle="A Little More About Me" mb="mb-2"/>
 
         <div className="relative md:flex md:items-center max-w-4xl mx-auto">
           {/* Image */}
@@ -22,11 +15,11 @@ export default function About() {
             className="relative z-10 md:w-1/2 mb-8 md:mb-0"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
             
           >
             <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+              <div className="absolute -inset-0.5 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
               <img
                 src="./Mohiuddin Mohammad Sadik_Software Engineer1.jpg"
                 alt="Mohiuddin Mohammad Sadik"
@@ -40,7 +33,7 @@ export default function About() {
             className="relative z-10 md:w-3/4 bg-white text-gray-800 rounded-xl shadow-2xl p-8 md:p-12"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
             
           >
             <h3 className="text-2xl font-bold mb-4">Software Engineer & Lifelong Learner</h3>

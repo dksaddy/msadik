@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
+import SectionHeader from '../helper/SectionHeader';
 import {
   FaCode,
   FaCogs,
-  FaPalette,
   FaMoneyCheckAlt,
+  FaTools,
   FaToolbox,
   FaReact,
   FaHtml5,
@@ -33,6 +34,7 @@ import {
   SiC,
   SiCplusplus,
   SiJsonwebtokens,
+  SiPeakdesign
 } from "react-icons/si";
 
 // Tech icon map with optional colors
@@ -71,17 +73,17 @@ const techIcons = {
 const skills = [
   {
     name: "Languages",
-    icon: <FaCode className="text-red-400 text-4xl" />,
+    icon: <FaCode className="text-blue-400 text-4xl" />,
     items: ["JavaScript", "TypeScript", "Python", "C", "C++", "Java"],
   },
   {
     name: "Frontend",
-    icon: <FaPalette className="text-blue-400 text-4xl" />,
+    icon: <SiPeakdesign className="text-blue-400 text-4xl" />,
     items: ["React.js", "Next.js", "HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Vite"],
   },
   {
     name: "Backend",
-    icon: <FaCogs className="text-green-400 text-4xl" />,
+    icon: <FaCogs className="text-blue-400 text-4xl" />,
     items: [
       "Node.js", "Express.js", "JWT Authentication", "SSLCommerz", "Jitsi", "Socket.io",
       "MongoDB", "SQL (MySQL/PostgreSQL)"
@@ -89,44 +91,36 @@ const skills = [
   },
   {
     name: "Tools",
-    icon: <FaToolbox className="text-gray-400 text-4xl" />,
+    icon: <FaTools className="text-blue-400 text-4xl" />,
     items: ["Postman", "VS Code", "Netlify", "Vercel", "NPM", "Git", "GitHub", "Supabase", "Multer"],
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-16 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-white to-blue-50">
+    <section id="skills" className="py-10 px-4 md:px-8 lg:px-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
-        {/* Section Heading */}
-        <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-            Skills <span className="text-blue-600">& Stack</span>
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
-            My academic background and relevant coursework
-          </p>
-        </motion.div>
+        <SectionHeader header="Tech STACKS" tittle="Language, Framworks & Tools I'm Using For Work"/>
 
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
               className="relative group"
+              initial={{ opacity: 0, x: index % 2 !== 0 ? -80 : 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
             >
-              <div className="relative h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 p-6">
+              <div className="relative h-full rounded-xl shadow-lg border border-gray-200 transition-all duration-300 
+              group-hover:-translate-y-1 p-6 hover:shadow-xl"
+              >
                 <div className="flex items-center mb-6">
-                  <div className={`p-3 ${skill.gradient} rounded-lg text-white`}>
+                  <div className={`p-3 rounded-lg text-white`}>
                     {skill.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 ml-4">
+                  <h3 className="text-2xl font-bold text-gray-800 ml-4">
                     {skill.name}
                   </h3>
                 </div>
@@ -137,19 +131,28 @@ export default function Skills() {
                       icon: <FaToolbox />,
                       color: "bg-gray-300 text-black",
                     };
+
                     return (
-                      <div
+                      <motion.div
                         key={i}
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.4,
+                          ease: "easeOut",
+                          delay: i * 0.1, // stagger the badges
+                        }}
                         className={`flex items-center gap-2 px-3 py-2 rounded-lg ${tech.color} shadow-sm hover:shadow-md transition-all duration-200`}
                       >
                         <span className="text-base">{tech.icon}</span>
                         <span className="text-sm font-medium">{item}</span>
-                      </div>
+                      </motion.div>
                     );
                   })}
                 </div>
+
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

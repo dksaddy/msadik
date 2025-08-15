@@ -8,6 +8,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import DownloadCV from '../helper/DownloadCV';
+import EmailCopy from '../helper/EmailAddress';
 
 export default function Hero() {
   const consoleLogMessages = [
@@ -16,8 +17,6 @@ export default function Hero() {
     { text: 'Compiling assets...', position: 'bottom-8 left-4 md:bottom-20 md:left-20' },
     { text: 'Deployment successful!', position: 'bottom-4 right-4 md:bottom-10 md:right-20' },
   ];
-
-  const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
   return (
     <section id="home" className="relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24 lg:py-10">
@@ -44,7 +43,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
 
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
         >
 
           <MatrixClock />
@@ -60,34 +59,34 @@ export default function Hero() {
               </div>
               <div className="flex-1 min-w-0 text-left">
                 <h3 className="font-semibold text-gray-900 text-sm md:text-base">Mohiuddin Mohammad Sadik</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Dhaka, Bangladesh</p>
-                <p className="text-gray-600 text-xs md:text-sm truncate">msadik3086@gmail.com</p>
+                <p className="text-gray-600 text-xs md:text-sm mb-1">Dhaka, Bangladesh</p>
+                <EmailCopy hero={true} />
               </div>
             </div>
           </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
 
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
         >
           <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
             <Typewriter texts={["FULL STACK DEVELOPER", "FRONTEND DEVELOPER", "MOBILE APPS DEVELOPER"]} />
           </h1>
           <p className="text-lg max-w-2xl mx-auto text-gray-600 mb-10">
-            "Hey, This is Sadik a passionate software engineer want to collaborate and invent great thing to ease Life."
+            "Hey, This is Sadik a passionate software engineer want to collaborate and develop great thing to ease Life."
           </p>
         </motion.div>
 
         <motion.div
           className="flex justify-center items-center gap-10 mb-5 p-2 lg:w-1/3 sm:w-full mx-auto rounded-xl"  
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
         >
-          <a href="#">
+          <a href="#contact">
             <LuContact className="lg:text-4xl text-2xl" />
           </a>
 

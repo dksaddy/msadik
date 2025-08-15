@@ -1,7 +1,9 @@
 "use client";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaBookOpen } from "react-icons/fa";
+import SectionHeader from '../helper/SectionHeader';
+import { containerVariants, itemVariants } from "../utils/SpanAnimation";
+
 
 export default function Education() {
   const education = {
@@ -19,25 +21,6 @@ export default function Education() {
     ],
   };
 
-  // Animation variants
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.15, // delay between each course animation
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  };
-
 
   return (
     <section
@@ -45,20 +28,8 @@ export default function Education() {
       className="py-15 px-4 md:px-8 lg:px-16 bg-white overflow-hidden"
     >
       <div className="mx-auto">
-        {/* Section Heading */}
-        <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-            Education <span className="text-blue-600">& Learning</span>
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
-            My academic background and relevant coursework
-          </p>
-        </motion.div>
+
+        <SectionHeader header="Education & LEARNING" tittle="A Short Details About My Learning Journey" />
 
         {/* Education Card */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
@@ -66,11 +37,7 @@ export default function Education() {
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 1,
-              ease: [0.25, 1, 0.5, 1],
-              delay: 0.2,
-            }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
             <img
               src="./uiu.jpg"
@@ -84,11 +51,8 @@ export default function Education() {
             className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 1,
-              ease: [0.25, 1, 0.5, 1],
-              delay: 0.2,
-            }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+
           >
 
             <div className="text-left">
@@ -104,7 +68,7 @@ export default function Education() {
             </div>
 
             <p className="text-gray-600 mt-2 mb-6">
-            Throughout my academic career, I successfully completed several software projects and was awarded two scholarships in recognition of my dedication and hard work.            
+              Throughout my academic career, I successfully completed several software projects and was awarded two scholarships in recognition of my dedication and hard work.
             </p>
 
 
@@ -112,23 +76,26 @@ export default function Education() {
             <h4 className="font-semibold text-gray-700 mb-4 flex items-center gap-2">
               <FaBookOpen className="text-blue-500" /> Relevant Courses
             </h4>
+
             <motion.div
               className="flex flex-wrap gap-2"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.5 }}
             >
               {education.courses.map((course, index) => (
                 <motion.span
                   key={index}
                   variants={itemVariants}
-                  className="px-3 py-1 text-sm font-medium bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100 transition-colors duration-200"
+                  className="px-3 py-1 text-sm font-medium bg-yellow-200 text-gray-800 rounded-full hover:bg-blue-100 transition-colors duration-200"
                 >
                   {course}
                 </motion.span>
               ))}
             </motion.div>
+
+
           </motion.div>
         </div>
       </div>
