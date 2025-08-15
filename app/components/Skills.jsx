@@ -101,7 +101,7 @@ export default function Skills() {
     <section id="skills" className="py-10 px-4 md:px-8 lg:px-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
-        <SectionHeader header="Tech STACKS" tittle="Language, Framwork & Tools I Use For Work"/>
+        <SectionHeader header="Tech STACKS" tittle="Language, Framworks & Tools I'm Using For Work"/>
 
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">

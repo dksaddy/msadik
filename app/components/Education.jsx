@@ -47,7 +47,7 @@ export default function Education() {
     >
       <div className="mx-auto">
 
-        <SectionHeader header="Education & LEARNING" tittle="A Short Details About My Graduation" />
+        <SectionHeader header="Education & LEARNING" tittle="A Short Details About My Learning Journey" />
 
         {/* Education Card */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-10">

@@ -109,7 +109,7 @@ export default function ContactTerminal() {
 
     return (
         <section id="contact" className="py-10 bg-white overflow-hidden">
-            <SectionHeader header="Contact ME" tittle="Happy to collaborate" />
+            <SectionHeader header="Contact ME" tittle="Happy to Collaborate" />
             <div className="container mx-auto px-6 flex justify-center items-center">
                 <motion.div
                     className="w-full max-w-2xl rounded-lg shadow-lg overflow-hidden"

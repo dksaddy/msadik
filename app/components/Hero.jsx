@@ -85,7 +85,7 @@ export default function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
         >
-          <a href="#">
+          <a href="#contact">
             <LuContact className="lg:text-4xl text-2xl" />
           </a>
 

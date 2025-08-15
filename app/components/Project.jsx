@@ -41,7 +41,7 @@ export default function Projects() {
     <section id="projects" className="py-15 px-4 md:px-8 lg:px-15 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
-        <SectionHeader header="Featured PROJECTS" tittle="A Little More About Me" />
+        <SectionHeader header="Featured PROJECTS" tittle="My Works and Collaborations" />
 
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project, idx) => (
