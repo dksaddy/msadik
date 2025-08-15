@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import SectionHeader from '../helper/SectionHeader';
+import { containerVariants, itemVariants } from "../utils/SpanAnimation";
 
 export default function Experience() {
   const experiences = [
@@ -17,24 +18,6 @@ export default function Experience() {
     },
 
   ];
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.3, // gap between each skill animation
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: 10 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
 
   return (
     <section id="experience" className="py-20 px-4 md:px-8 bg-white overflow-hidden">

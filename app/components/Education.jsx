@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { FaBookOpen } from "react-icons/fa";
 import SectionHeader from '../helper/SectionHeader';
+import { containerVariants, itemVariants } from "../utils/SpanAnimation";
 
 
 export default function Education() {
@@ -18,25 +19,6 @@ export default function Education() {
       "System Analysis and Design",
       "Human Computer Interaction",
     ],
-  };
-
-  // Animation variants
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.15, // delay between each course animation
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
   };
 
 
@@ -94,12 +76,13 @@ export default function Education() {
             <h4 className="font-semibold text-gray-700 mb-4 flex items-center gap-2">
               <FaBookOpen className="text-blue-500" /> Relevant Courses
             </h4>
+
             <motion.div
               className="flex flex-wrap gap-2"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.5 }}
             >
               {education.courses.map((course, index) => (
                 <motion.span
@@ -111,6 +94,8 @@ export default function Education() {
                 </motion.span>
               ))}
             </motion.div>
+
+
           </motion.div>
         </div>
       </div>
