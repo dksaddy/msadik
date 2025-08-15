@@ -111,7 +111,7 @@ export default function ContactTerminal() {
         <section id="contact" className="py-15 bg-white overflow-hidden">
             <div className="mx-auto">
                 <SectionHeader header="Contact ME" tittle="Happy to Collaborate" />
-                <div className="container mx-auto px-6 flex justify-center items-center">
+                <div className="container mx-auto px-4 flex justify-center items-center">
                     <motion.div
                         className="w-full max-w-2xl rounded-lg shadow-lg overflow-hidden"
                         initial={{ opacity: 0, scale: .4 }}
@@ -119,8 +119,8 @@ export default function ContactTerminal() {
                         transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                     >
                         {/* Terminal header */}
-                        <div className="flex items-center justify-between bg-blue-500 px-3 py-1">
-                            <span className="text-white text-sm font-mono">SADDY Terminal</span>
+                        <div className="flex items-center justify-between border border-gray-200 px-3 py-1">
+                            <span className="text-gray-600 text-sm font-mono font-bold">SADDY Terminal</span>
                             <button
                                 onClick={handleClear}
                                 className="w-5 h-5 flex items-center justify-center bg-red-600 hover:bg-red-700 rounded text-white font-bold leading-none"

@@ -17,7 +17,7 @@ export default function Footer() {
               Mohiuddin Sadik
             </h3>
             <p className="text-gray-600 text-sm">Full Stack Developer | Software Engineer</p>
-            <EmailCopy hero={false}/>
+            <EmailCopy hero={false} />
           </div>
         </div>
 
@@ -31,7 +31,7 @@ export default function Footer() {
             className={buttonStayle}
             aria-label="GitHub"
           >
-           <FaGithubSquare className="text-xl"/> 
+            <FaGithubSquare className="text-xl" />
           </a>
           <a
             href="https://linkedin.com/in/msadik3086"
@@ -40,7 +40,7 @@ export default function Footer() {
             className={buttonStayle}
             aria-label="LinkedIn"
           >
-            <FaLinkedin className="text-xl"/> 
+            <FaLinkedin className="text-xl" />
           </a>
         </div>
       </div>
@@ -48,10 +48,9 @@ export default function Footer() {
       {/* Copyright */}
       <div className="pt-4 border-t border-gray-200 text-center">
         <p className="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Mohiuddin Sadik. All rights reserved.
-          <span className="mx-1 md:mx-2">•</span>
-          Built with NextJS, Tailwind CSS, Framer Motion
+          &copy; {new Date().getFullYear()} Mohiuddin Sadik. All rights reserved
         </p>
+        <p className="text-sm text-gray-500"> Built with NextJS, Tailwind CSS, Framer Motion</p>
       </div>
     </footer>
   );
