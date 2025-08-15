@@ -1,7 +1,10 @@
 import { FaGithubSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
+import EmailCopy from "../helper/EmailAddress";
 
 export default function Footer() {
+  const buttonStayle = "p-1 bg-white rounded hover:bg-yellow-200 transition-colors duration-300 border border-gray-300"
+
   return (
     <footer className="bg-gradient-to-r from-gray-50 to-gray-100 text-gray-800 py-6 px-4 md:px-8 lg:px-16 border-t border-gray-200">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center space-y-6 md:space-y-0">
@@ -14,12 +17,7 @@ export default function Footer() {
               Mohiuddin Sadik
             </h3>
             <p className="text-gray-600 text-sm">Full Stack Developer | Software Engineer</p>
-            <a href="mailto:msadik3086@gmail.com" className="text-blue-600 hover:underline text-sm flex items-center justify-center md:justify-start space-x-1">
-              <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <span>msadik3086@gmail.com</span>
-            </a>
+            <EmailCopy hero={false}/>
           </div>
         </div>
 
@@ -30,7 +28,7 @@ export default function Footer() {
             href="https://github.com/dksaddy"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 bg-gray-200 rounded hover:bg-blue-300 transition-colors"
+            className={buttonStayle}
             aria-label="GitHub"
           >
            <FaGithubSquare className="text-xl"/> 
@@ -39,7 +37,7 @@ export default function Footer() {
             href="https://linkedin.com/in/msadik3086"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 bg-gray-200 rounded hover:bg-blue-300 transition-colors"
+            className={buttonStayle}
             aria-label="LinkedIn"
           >
             <FaLinkedin className="text-xl"/> 

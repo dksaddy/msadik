@@ -8,6 +8,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import DownloadCV from '../helper/DownloadCV';
+import EmailCopy from '../helper/EmailAddress';
 
 export default function Hero() {
   const consoleLogMessages = [
@@ -58,8 +59,8 @@ export default function Hero() {
               </div>
               <div className="flex-1 min-w-0 text-left">
                 <h3 className="font-semibold text-gray-900 text-sm md:text-base">Mohiuddin Mohammad Sadik</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Dhaka, Bangladesh</p>
-                <p className="text-gray-600 text-xs md:text-sm truncate">msadik3086@gmail.com</p>
+                <p className="text-gray-600 text-xs md:text-sm mb-1">Dhaka, Bangladesh</p>
+                <EmailCopy hero={true} />
               </div>
             </div>
           </div>
