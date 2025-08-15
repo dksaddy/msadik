@@ -83,7 +83,7 @@ export default function Experience() {
                 </ul>
 
 
-                <div className="flex flex-wrap gap-2">
+                
                   <motion.div
                     className="flex flex-wrap gap-2"
                     variants={containerVariants}
@@ -101,7 +101,7 @@ export default function Experience() {
                       </motion.span>
                     ))}
                   </motion.div>
-                </div>
+              
 
 
               </div>

@@ -108,73 +108,75 @@ export default function ContactTerminal() {
     };
 
     return (
-        <section id="contact" className="py-10 bg-white overflow-hidden">
-            <SectionHeader header="Contact ME" tittle="Happy to Collaborate" />
-            <div className="container mx-auto px-6 flex justify-center items-center">
-                <motion.div
-                    className="w-full max-w-2xl rounded-lg shadow-lg overflow-hidden"
-                    initial={{ opacity: 0, scale: .4 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                >
-                    {/* Terminal header */}
-                    <div className="flex items-center justify-between bg-blue-500 px-3 py-1">
-                        <span className="text-white text-sm font-mono">SADDY Terminal</span>
-                        <button
-                            onClick={handleClear}
-                            className="w-5 h-5 flex items-center justify-center bg-red-600 hover:bg-red-700 rounded text-white font-bold leading-none"
-                        >
-                            ×
-                        </button>
-                    </div>
-
-                    {/* Terminal body */}
-                    <div
-                        ref={terminalRef}
-                        className="p-3 font-mono text-green-400 h-96 overflow-y-auto bg-black"
+        <section id="contact" className="py-15 bg-white overflow-hidden">
+            <div className="mx-auto">
+                <SectionHeader header="Contact ME" tittle="Happy to Collaborate" />
+                <div className="container mx-auto px-6 flex justify-center items-center">
+                    <motion.div
+                        className="w-full max-w-2xl rounded-lg shadow-lg overflow-hidden"
+                        initial={{ opacity: 0, scale: .4 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                     >
-                        {lines.map((line, index) => (
-                            <div key={index} className="w-full mb-1 break-words">
-                                <span>{displayed[index]}</span>
+                        {/* Terminal header */}
+                        <div className="flex items-center justify-between bg-blue-500 px-3 py-1">
+                            <span className="text-white text-sm font-mono">SADDY Terminal</span>
+                            <button
+                                onClick={handleClear}
+                                className="w-5 h-5 flex items-center justify-center bg-red-600 hover:bg-red-700 rounded text-white font-bold leading-none"
+                            >
+                                ×
+                            </button>
+                        </div>
 
-                                {line.field && index === currentLine && displayed[index] === line.text && (
-                                    <>
-                                        {line.field === "message" ? (
-                                            <textarea
-                                                value={inputValues[line.field]}
-                                                onChange={(e) => handleChange(e, line.field)}
-                                                onKeyDown={(e) => handleKeyDown(e, line.field)}
-                                                className="bg-transparent text-green-400 outline-none w-full resize-none"
-                                                rows={3}
-                                                placeholder="Type your message and add #100# at the end"
-                                                autoFocus={line.field !== "name"}
-                                            />
-                                        ) : (
-                                            <input
-                                                type="text"
-                                                value={inputValues[line.field]}
-                                                onChange={(e) => handleChange(e, line.field)}
-                                                onKeyDown={(e) => handleKeyDown(e, line.field)}
-                                                className="bg-transparent text-green-400 outline-none w-full"
-                                                autoFocus={line.field !== "name"}
-                                            />
-                                        )}
-                                        <span className="animate-pulse">_</span>
-                                    </>
-                                )}
+                        {/* Terminal body */}
+                        <div
+                            ref={terminalRef}
+                            className="p-3 font-mono text-green-400 h-96 overflow-y-auto bg-black"
+                        >
+                            {lines.map((line, index) => (
+                                <div key={index} className="w-full mb-1 break-words">
+                                    <span>{displayed[index]}</span>
+
+                                    {line.field && index === currentLine && displayed[index] === line.text && (
+                                        <>
+                                            {line.field === "message" ? (
+                                                <textarea
+                                                    value={inputValues[line.field]}
+                                                    onChange={(e) => handleChange(e, line.field)}
+                                                    onKeyDown={(e) => handleKeyDown(e, line.field)}
+                                                    className="bg-transparent text-green-400 outline-none w-full resize-none"
+                                                    rows={3}
+                                                    placeholder="Type your message and add #100# at the end"
+                                                    autoFocus={line.field !== "name"}
+                                                />
+                                            ) : (
+                                                <input
+                                                    type="text"
+                                                    value={inputValues[line.field]}
+                                                    onChange={(e) => handleChange(e, line.field)}
+                                                    onKeyDown={(e) => handleKeyDown(e, line.field)}
+                                                    className="bg-transparent text-green-400 outline-none w-full"
+                                                    autoFocus={line.field !== "name"}
+                                                />
+                                            )}
+                                            <span className="animate-pulse">_</span>
+                                        </>
+                                    )}
 
 
-                                {line.field && index < currentLine && (
-                                    <span>{inputValues[line.field]}</span>
-                                )}
-                            </div>
-                        ))}
+                                    {line.field && index < currentLine && (
+                                        <span>{inputValues[line.field]}</span>
+                                    )}
+                                </div>
+                            ))}
 
-                        <div className="mt-4 text-green-300 text-center font-mono">{statusMessage}</div>
-                    </div>
+                            <div className="mt-4 text-green-300 text-center font-mono">{statusMessage}</div>
+                        </div>
 
 
-                </motion.div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
