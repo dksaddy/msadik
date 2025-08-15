@@ -118,7 +118,7 @@ export default function ContactTerminal() {
                     transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                 >
                     {/* Terminal header */}
-                    <div className="flex items-center justify-between bg-black px-3 py-1">
+                    <div className="flex items-center justify-between bg-blue-500 px-3 py-1">
                         <span className="text-white text-sm font-mono">SADDY Terminal</span>
                         <button
                             onClick={handleClear}
@@ -131,13 +131,7 @@ export default function ContactTerminal() {
                     {/* Terminal body */}
                     <div
                         ref={terminalRef}
-                        className="p-3 font-mono text-green-400 h-96 overflow-y-auto"
-                        style={{
-                            backgroundImage: "url('/stack.gif')",
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                            wordBreak: "break-word",
-                        }}
+                        className="p-3 font-mono text-green-400 h-96 overflow-y-auto bg-black"
                     >
                         {lines.map((line, index) => (
                             <div key={index} className="w-full mb-1 break-words">
