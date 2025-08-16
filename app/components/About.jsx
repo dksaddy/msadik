@@ -21,7 +21,7 @@ export default function About() {
             <div className="relative group">
               <div className="absolute -inset-0.5 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
               <img
-                src="./Mohiuddin Mohammad Sadik_Software Engineer1.jpg"
+                src="/Mohiuddin Mohammad Sadik_Software Engineer1.jpg"
                 alt="Mohiuddin Mohammad Sadik"
                 className="relative rounded-lg shadow-2xl w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
               />

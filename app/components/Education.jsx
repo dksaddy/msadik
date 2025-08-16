@@ -40,7 +40,7 @@ export default function Education() {
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
             <img
-              src="./uiu.jpg"
+              src="/uiu.jpg"
               alt="uiu"
               className="w-lg rounded-xl shadow-lg ring-2 ring-blue-200 hover:scale-105 transition-transform duration-300"
             />
