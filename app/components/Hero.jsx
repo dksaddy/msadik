@@ -52,7 +52,7 @@ export default function Hero() {
             <div className="flex items-center space-x-5 shadow-lg rounded-full p-5">
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-blue-300">
                 <img
-                  src="Mohiuddin Mohammad Sadik_Software Engineer.jpg"
+                  src="/Mohiuddin Mohammad Sadik_Software Engineer.jpg"
                   alt="Mohiuddin Mohammad Sadik"
                   className="w-full h-full object-cover"
                 />

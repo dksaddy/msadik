@@ -11,7 +11,7 @@ export default function Certification() {
       completionDate: "March 2025",
       stack: ["React", "HTML5", "CSS3", "Javascript", "Prisma", "NextJS"],
       verifyLink: "https://cdip.uiu.ac.bd/verify/",
-      logo: "cdip.jpeg", // image file in /public or use full URL
+      logo: "/cdip.jpeg", // image file in /public or use full URL
     },
     {
       title: "Web Design and Development for Freelancing Level 3",
@@ -19,7 +19,7 @@ export default function Certification() {
       completionDate: "August 2025",
       stack: ["Bootstrap", "HTML5", "CSS3", "Javascript", "UI", "UX"],
       verifyLink: "#",
-      logo: "nsda.png", // image file in /public or use full URL
+      logo: "/nsda.png", // image file in /public or use full URL
     },
   ];
 
