@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
-import Typewriter from './Typewriter';
-import ConsoleLogCard from './ConsoleLogCard';
+import Typewriter from '../helper/Typewriter';
+import ConsoleLogCard from '../helper/ConsoleLogCard';
 import MatrixClock from '../helper/Clock';
 import { LuContact } from "react-icons/lu";
 import { FaGithubSquare } from "react-icons/fa";
