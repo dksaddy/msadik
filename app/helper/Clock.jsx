@@ -29,8 +29,8 @@ const renderMatrix = (filledCount, totalBoxes, isHour = false) => {
           initial={{ scale: 0.8, opacity: 0.3 }}
           animate={{
             scale: 1,
-            opacity: i < filledCount ? 1 : 0.4, // all past boxes stay lit
-            backgroundColor: i < filledCount ? "#000000ff" : "#ce8517ff",
+            opacity: i < filledCount ? 1 : 1, // all past boxes stay lit
+            backgroundColor: i < filledCount ? "#000000ff" : "#ffffffff",
           }}
           transition={{ duration: 0.2 }}
           className="w-2 h-2 flex items-center justify-center rounded"

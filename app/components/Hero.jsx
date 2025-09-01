@@ -53,7 +53,7 @@ export default function Hero() {
           <MatrixClock />
 
           <div className="rounded-lg p-2 max-w-sm w-full mx-auto">
-            <div className="flex items-center space-x-5 shadow-lg rounded-full p-5">
+            <div className="flex items-center space-x-5 shadow-sm dark:shadow-white rounded-full p-5">
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-blue-300">
                 <img
                   src="/Mohiuddin Mohammad Sadik_Software Engineer.jpg"
@@ -62,8 +62,12 @@ export default function Hero() {
                 />
               </div>
               <div className="flex-1 min-w-0 text-left">
-                <h3 className="font-semibold text-gray-900 text-sm md:text-base">Mohiuddin Mohammad Sadik</h3>
-                <p className="text-gray-600 text-xs md:text-sm mb-1">Dhaka, Bangladesh</p>
+                <h3 
+                className="font-semibold text-gray-900 text-sm md:text-base dark:text-foreground"
+                >
+                  Mohiuddin Mohammad Sadik
+                </h3>
+                <p className="text-gray-600 text-xs md:text-sm mb-1 dark:text-foreground">Dhaka, Bangladesh</p>
                 <EmailCopy hero={true} />
               </div>
             </div>
@@ -79,7 +83,7 @@ export default function Hero() {
           <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
             <Typewriter texts={["FULL STACK DEVELOPER", "FRONTEND DEVELOPER", "MOBILE APPS DEVELOPER"]} />
           </h1>
-          <p className="text-lg max-w-2xl mx-auto text-gray-600 mb-10">
+          <p className="text-lg max-w-2xl mx-auto text-gray-600 mb-10 dark:text-foreground">
             "Hey, This is Sadik a passionate software engineer want to collaborate and develop great thing to ease Life."
           </p>
         </motion.div>
@@ -91,19 +95,19 @@ export default function Hero() {
           transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
         >
           <a href="#contact">
-            <LuContact className="lg:text-4xl text-2xl" />
+            <LuContact className="lg:text-4xl text-2xl dark:text-foreground" />
           </a>
 
           <a href="https://github.com/dksaddy" target="_blank">
-            <FaGithubSquare className="lg:text-4xl text-2xl" />
+            <FaGithubSquare className="lg:text-4xl text-2xl dark:text-foreground" />
           </a>
 
           <a href="https://linkedin.com/in/msadik3086" target="_blank">
-            <FaLinkedin className="lg:text-4xl text-2xl" />
+            <FaLinkedin className="lg:text-4xl text-2xl dark:text-foreground" />
           </a>
 
           <a href="https://leetcode.com/u/saddypro1/" target="_blank">
-            <SiLeetcode className="lg:text-4xl text-2xl" />
+            <SiLeetcode className="lg:text-4xl text-2xl dark:text-foreground" />
           </a>
 
         </motion.div>
