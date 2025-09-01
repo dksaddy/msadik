@@ -70,7 +70,7 @@ const filledSeconds = getFilledBoxesProgress(12, seconds, 5); // range+progress
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="flex flex-col items-center gap-3 p-3 bg-white font-sans w-full max-w-xs mx-auto"
+      className="flex flex-col items-center gap-3 p-3 font-sans w-full max-w-xs mx-auto"
     >
       <div className="flex items-start gap-4">
         <div className="flex flex-col items-center">

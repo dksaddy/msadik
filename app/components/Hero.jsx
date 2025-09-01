@@ -12,14 +12,14 @@ import EmailCopy from '../helper/EmailAddress';
 
 export default function Hero() {
   const consoleLogMessages = [
-    { text: 'Initializing portfolio...', position: 'top-4 left-4 md:top-10 md:left-10' },
-    { text: 'Loading components...', position: 'top-8 right-4 md:top-20 md:right-10' },
+    { text: 'Initializing portfolio...', position: 'top-20 left-4 md:top-20 md:left-10' },
+    { text: 'Loading components...', position: 'top-28 right-4 md:top-28 md:right-10' },
     { text: 'Compiling assets...', position: 'bottom-8 left-4 md:bottom-20 md:left-20' },
     { text: 'Deployment successful!', position: 'bottom-4 right-4 md:bottom-10 md:right-20' },
   ];
 
   return (
-    <section id="home" className="relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24 lg:py-10">
+    <section id="home" className="min-h-screen relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24 lg:py-10">
       {/* Console Log Cards */}
       {consoleLogMessages.map((msg, index) => (
         <ConsoleLogCard

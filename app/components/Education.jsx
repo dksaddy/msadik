@@ -18,6 +18,11 @@ export default function Education() {
       "Mobile Application Development",
       "System Analysis and Design",
       "Human Computer Interaction",
+      "Database Management System",
+      "Object Oriented Programming",
+      "Data Structure & Algorithm",
+      "Web Technology",
+      "Operating System",
     ],
   };
 
@@ -25,14 +30,14 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="py-15 px-4 md:px-8 lg:px-16 bg-white overflow-hidden"
+      className="min-h-screen py-15 px-4 md:px-8 lg:px-16 bg-white overflow-hidden"
     >
       <div className="mx-auto">
 
         <SectionHeader header="Education & LEARNING" tittle="A Short Details About My Learning Journey" />
 
         {/* Education Card */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 mt-20">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -100 }}

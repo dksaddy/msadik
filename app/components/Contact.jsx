@@ -108,7 +108,10 @@ export default function ContactTerminal() {
     };
 
     return (
-        <section id="contact" className="py-15 bg-white overflow-hidden">
+        <section
+            id="contact"
+            className="min-h-screen py-15 bg-white overflow-hidden dark:bg-gray-800"
+        >
             <div className="mx-auto">
                 <SectionHeader header="Contact ME" tittle="Happy to Collaborate" />
                 <div className="container mx-auto px-4 flex justify-center items-center">
@@ -133,12 +136,12 @@ export default function ContactTerminal() {
                         <div
                             ref={terminalRef}
                             className="p-3 font-mono text-green-400 h-96 overflow-y-auto bg-black"
-                            // style={{
-                            //     backgroundImage: "url('/termi3.gif')",
-                            //     backgroundSize: "cover",
-                            //     backgroundPosition: "center",
-                            //     wordBreak: "break-word",
-                            // }}
+                        // style={{
+                        //     backgroundImage: "url('/termi3.gif')",
+                        //     backgroundSize: "cover",
+                        //     backgroundPosition: "center",
+                        //     wordBreak: "break-word",
+                        // }}
                         >
                             {lines.map((line, index) => (
                                 <div key={index} className="w-full mb-1 break-words">

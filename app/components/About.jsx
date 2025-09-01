@@ -4,12 +4,12 @@ import SectionHeader from '../helper/SectionHeader';
 
 export default function About() {
   return (
-    <section id="about" className="py-15 bg-white overflow-hidden">
+    <section id="about" className="min-h-screen py-15 bg-white overflow-hidden dark:bg-gray-800">
       <div className="container mx-auto px-6">
 
         <SectionHeader header="About ME" tittle="A Little More About Me" mb="mb-2"/>
 
-        <div className="relative md:flex md:items-center max-w-4xl mx-auto">
+        <div className="relative md:flex md:items-center max-w-4xl mx-auto mt-20">
           {/* Image */}
           <motion.div
             className="relative z-10 md:w-1/2 mb-8 md:mb-0"
