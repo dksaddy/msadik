@@ -53,7 +53,7 @@ export default function Hero() {
           <MatrixClock />
 
           <div className="rounded-lg p-2 max-w-sm w-full mx-auto">
-            <div className="flex items-center space-x-5 shadow-sm dark:shadow-white rounded-full p-5">
+            <div className="flex items-center space-x-5 shadow-sm  rounded-full p-5">
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-blue-300">
                 <img
                   src="/Mohiuddin Mohammad Sadik_Software Engineer.jpg"
