@@ -99,7 +99,7 @@ export default function Header() {
                 href={item.href}
                 className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
                   active === item.key
-                    ? "text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-900/30"
+                    ? "bg-blue-100 dark:bg-blue-900/30 font-bold"
                     : "text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800"
                 }`}
                 onClick={(e) => {
@@ -206,7 +206,7 @@ export default function Header() {
                       href={item.href}
                       className={`flex flex-col items-center justify-center p-4 rounded-xl text-center transition-all ${
                         active === item.key
-                          ? "bg-blue-50 text-blue-600 border-2 border-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700"
+                          ? "bg-blue-50 border-2 border-blue-200 dark:text-gray-800"
                           : "bg-gray-50 text-gray-700 hover:bg-gray-100 border-2 border-transparent dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
                       }`}
                       onClick={(e) => {

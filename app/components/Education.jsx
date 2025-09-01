@@ -37,7 +37,7 @@ export default function Education() {
         <SectionHeader header="Education & LEARNING" tittle="A Short Details About My Learning Journey" />
 
         {/* Education Card */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 mt-20">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -100 }}

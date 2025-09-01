@@ -9,7 +9,7 @@ export default function About() {
 
         <SectionHeader header="About ME" tittle="A Little More About Me" mb="mb-2"/>
 
-        <div className="relative md:flex md:items-center max-w-4xl mx-auto mt-20">
+        <div className="relative md:flex md:items-center max-w-4xl mx-auto">
           {/* Image */}
           <motion.div
             className="relative z-10 md:w-1/2 mb-8 md:mb-0"
