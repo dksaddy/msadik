@@ -19,7 +19,11 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="min-h-screen relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24 lg:py-10">
+    <section 
+    id="home" 
+    className="min-h-screen relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24 lg:py-10
+    dark:bg-background"
+    >
       {/* Console Log Cards */}
       {consoleLogMessages.map((msg, index) => (
         <ConsoleLogCard
