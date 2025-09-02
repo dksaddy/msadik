@@ -13,13 +13,10 @@ import EmailCopy from '../helper/EmailAddress';
 function FloatingPaths({ position }) {
   const paths = Array.from({ length: 36 }, (_, i) => ({
     id: i,
-    d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
-      380 - i * 5 * position
-    } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${
-      152 - i * 5 * position
-    } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
-      684 - i * 5 * position
-    } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
+    d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${380 - i * 5 * position
+      } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${152 - i * 5 * position
+      } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${684 - i * 5 * position
+      } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
     color: `rgba(15,23,42,${0.1 + i * 0.03})`,
     width: 0.5 + i * 0.03,
   }))
@@ -63,9 +60,9 @@ export default function Hero() {
   ];
 
   return (
-    <section 
-    id="home" 
-    className="min-h-screen relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24 lg:py-10
+    <section
+      id="home"
+      className="min-h-screen relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24 lg:py-10
     dark:bg-background"
     >
 
@@ -103,7 +100,8 @@ export default function Hero() {
 
           <div className="rounded-lg p-2 max-w-sm w-full mx-auto">
             <div className="flex items-center space-x-5 shadow-sm  rounded-full p-5">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-blue-300">
+
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-gray-300">
                 <img
                   src="/Mohiuddin Mohammad Sadik_Software Engineer.jpg"
                   alt="Mohiuddin Mohammad Sadik"
@@ -111,8 +109,8 @@ export default function Hero() {
                 />
               </div>
               <div className="flex-1 min-w-0 text-left">
-                <h3 
-                className="font-semibold text-gray-900 text-sm md:text-base dark:text-foreground"
+                <h3
+                  className="font-semibold text-gray-900 text-sm md:text-base dark:text-foreground"
                 >
                   Mohiuddin Mohammad Sadik
                 </h3>
@@ -129,16 +127,23 @@ export default function Hero() {
 
           transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
         >
-          <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
+          <h1
+            className="text-2xl md:text-6xl lg:text-7xl font-extrabold mb-4 bg-black/80 bg-clip-text text-transparent
+           dark:bg-white/80"
+          >
             <Typewriter texts={["FULL STACK DEVELOPER", "FRONTEND DEVELOPER", "MOBILE APPS DEVELOPER"]} />
           </h1>
-          <p className="text-lg max-w-2xl mx-auto text-gray-600 mb-10 dark:text-foreground">
-            "Hey, This is Sadik a passionate software engineer want to collaborate and develop great thing to ease Life."
+          <p
+            className="text-md md:text-lg lg:text-lg max-w-2xl mx-auto text-gray-600 mb-10 
+           dark:text-foreground font-medium">
+            <span className='text-3xl'>"</span>
+            Hey, This is Saddy a software engineer who wants to collaborate and develop great thing to ease Life.
+            <span className='text-3xl'>"</span>
           </p>
         </motion.div>
 
         <motion.div
-          className="flex justify-center items-center gap-10 mb-5 p-2 lg:w-1/3 sm:w-full mx-auto rounded-xl"  
+          className="flex justify-center items-center gap-10 mb-5 p-2 lg:w-1/3 sm:w-full mx-auto rounded-xl"
           initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
