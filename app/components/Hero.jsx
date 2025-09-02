@@ -99,7 +99,7 @@ export default function Hero() {
           <MatrixClock />
 
           <div className="rounded-lg p-2 max-w-sm w-full mx-auto">
-            <div className="flex items-center space-x-5 shadow-sm  rounded-full p-5">
+            <div className="flex items-center space-x-5 shadow-sm rounded-l-4xl p-5 dark:border">
 
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-gray-300">
                 <img
@@ -134,11 +134,11 @@ export default function Hero() {
             <Typewriter texts={["FULL STACK DEVELOPER", "FRONTEND DEVELOPER", "MOBILE APPS DEVELOPER"]} />
           </h1>
           <p
-            className="text-md md:text-lg lg:text-lg max-w-2xl mx-auto text-gray-600 mb-10 
+            className="text-md md:text-md lg:text-xl max-w-2xl mx-auto text-gray-600 mb-10 
            dark:text-foreground font-medium">
-            <span className='text-3xl'>"</span>
+            <span className='text-xl md:text-3xl'>"</span>
             Hey, This is Saddy a software engineer who wants to collaborate and develop great thing to ease Life.
-            <span className='text-3xl'>"</span>
+            <span className='text-xl md:text-3xl'>"</span>
           </p>
         </motion.div>
 
