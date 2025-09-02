@@ -11,7 +11,7 @@ import DownloadCV from '../helper/DownloadCV';
 import EmailCopy from '../helper/EmailAddress';
 
 function FloatingPaths({ position }) {
-  const paths = Array.from({ length: 36 }, (_, i) => ({
+  const paths = Array.from({ length: 26 }, (_, i) => ({
     id: i,
     d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${380 - i * 5 * position
       } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${152 - i * 5 * position
@@ -149,19 +149,19 @@ export default function Hero() {
           transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
         >
           <a href="#contact">
-            <LuContact className="lg:text-4xl text-2xl dark:text-foreground" />
+            <LuContact className="lg:text-4xl text-3xl dark:text-foreground" />
           </a>
 
           <a href="https://github.com/dksaddy" target="_blank">
-            <FaGithubSquare className="lg:text-4xl text-2xl dark:text-foreground" />
+            <FaGithubSquare className="lg:text-4xl text-3xl dark:text-foreground" />
           </a>
 
           <a href="https://linkedin.com/in/msadik3086" target="_blank">
-            <FaLinkedin className="lg:text-4xl text-2xl dark:text-foreground" />
+            <FaLinkedin className="lg:text-4xl text-3xl dark:text-foreground" />
           </a>
 
           <a href="https://leetcode.com/u/saddypro1/" target="_blank">
-            <SiLeetcode className="lg:text-4xl text-2xl dark:text-foreground" />
+            <SiLeetcode className="lg:text-4xl text-3xl dark:text-foreground" />
           </a>
 
         </motion.div>
