@@ -110,7 +110,7 @@ export default function ContactTerminal() {
     return (
         <section
             id="contact"
-            className="min-h-screen py-15 bg-white overflow-hidden dark:bg-gray-800"
+            className="min-h-screen py-15 bg-white overflow-hidden dark:bg-background"
         >
             <div className="mx-auto">
                 <SectionHeader header="Contact ME" tittle="Happy to Collaborate" />

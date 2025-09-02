@@ -4,7 +4,7 @@ import SectionHeader from '../helper/SectionHeader';
 
 export default function About() {
   return (
-    <section id="about" className="min-h-screen py-15 bg-white overflow-hidden dark:bg-gray-800">
+    <section id="about" className="min-h-screen py-15 bg-white overflow-hidden dark:bg-background">
       <div className="container mx-auto px-6">
 
         <SectionHeader header="About ME" tittle="A Little More About Me" mb="mb-2"/>

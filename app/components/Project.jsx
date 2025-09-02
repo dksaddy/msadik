@@ -41,7 +41,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen py-15 px-4 md:px-8 lg:px-15 bg-white overflow-hidden dark:bg-gray-800"
+      className="min-h-screen py-15 px-4 md:px-8 lg:px-15 bg-white overflow-hidden dark:bg-background"
     >
       <div className="max-w-7xl mx-auto">
 

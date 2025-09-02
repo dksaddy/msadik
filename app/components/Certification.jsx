@@ -32,7 +32,10 @@ export default function Certification() {
   ];
 
   return (
-    <section id="certification" className="min-h-screen py-16 px-4 md:px-8 lg:px-16 bg-white overflow-hidden">
+    <section 
+    id="certification" 
+    className="min-h-screen py-16 px-4 md:px-8 lg:px-16 bg-white overflow-hidden dark:bg-background"
+    >
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           header="Certification & RECOGNITION"

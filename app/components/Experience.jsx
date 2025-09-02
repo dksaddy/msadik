@@ -20,7 +20,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="min-h-screen py-20 px-4 md:px-8 bg-white overflow-hidden dark:bg-gray-800">
+    <section id="experience" className="min-h-screen py-20 px-4 md:px-8 bg-white overflow-hidden dark:bg-background">
       <div className="max-w-4xl mx-auto">
 
         <SectionHeader header="Work EXPERIENCE" tittle="My Experience and Contribution"/>
