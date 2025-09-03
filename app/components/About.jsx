@@ -9,7 +9,7 @@ export default function About() {
 
         <SectionHeader header="About ME" tittle="A Little More About Me" mb="mb-2"/>
 
-        <div className="relative md:flex md:items-center max-w-4xl mx-auto">
+        <div className="relative md:flex md:items-center max-w-4xl mx-auto gap-2">
           {/* Image */}
           <motion.div
             className="relative z-10 md:w-1/2 mb-8 md:mb-0"
@@ -30,20 +30,20 @@ export default function About() {
 
           {/* Text Card */}
           <motion.div
-            className="relative z-10 md:w-3/4 bg-white text-gray-800 rounded-xl shadow-2xl p-8 md:p-12"
+            className="relative z-10 md:w-3/4 text-gray-800 rounded-xl shadow-2xl p-8 md:p-12 border"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
             
           >
-            <h3 className="text-2xl font-bold mb-4">Software Engineer & Lifelong Learner</h3>
-            <p className="text-base mb-4 leading-relaxed">
+            <h3 className="text-2xl font-bold mb-4 dark:text-foreground">Software Engineer & Lifelong Learner</h3>
+            <p className="text-base mb-4 leading-relaxed dark:text-foreground">
               I'm a Computer Science graduate from United International University, driven by a passion for software engineering. I thrive in environments where I can work on both the front-end and back-end, bringing ideas to life.
             </p>
-            <p className="text-base mb-4 leading-relaxed">
+            <p className="text-base mb-4 leading-relaxed dark:text-foreground">
               Java and JavaScript are my go-to languages, but I also have a soft spot for C. There's a unique thrill in communicating with a computer through code. My experience includes four academic projects and an e-commerce site built on WordPress, which gave me a solid grasp of CMS platforms.
             </p>
-            <p className="text-base leading-relaxed">
+            <p className="text-base leading-relaxed dark:text-foreground">
               On the design front, I'm comfortable with Figma and Framer. I live by the idea of being a versatile "jack of all trades," constantly learning and growing. I'm excited to collaborate on projects that push boundaries and make a real-world impact.
             </p>
           </motion.div>

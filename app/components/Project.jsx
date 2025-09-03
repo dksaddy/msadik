@@ -63,7 +63,7 @@ export default function Projects() {
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                     {/* Title + Role */}
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-800">{project.title}</h3>
+                      <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground">{project.title}</h3>
                       <p className="text-indigo-600 font-medium">{project.role}</p>
                     </div>
 

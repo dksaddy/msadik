@@ -37,7 +37,7 @@ export default function Education() {
         <SectionHeader header="Education & LEARNING" tittle="A Short Details About My Learning Journey" />
 
         {/* Education Card */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-2">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -47,13 +47,13 @@ export default function Education() {
             <img
               src="/uiu.jpg"
               alt="uiu"
-              className="w-lg rounded-xl shadow-lg ring-2 ring-blue-200 hover:scale-105 transition-transform duration-300"
+              className="w-lg rounded-xl shadow-2xl hover:scale-105 transition-transform duration-300"
             />
           </motion.div>
 
           {/* Text Card */}
           <motion.div
-            className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300"
+            className="rounded-2xl shadow-xl p-8 w-full max-w-xl border hover:shadow-2xl transition-shadow duration-300"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -61,7 +61,7 @@ export default function Education() {
           >
 
             <div className="text-left">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+              <h3 className="text-2xl font-bold text-gray-800 mb-2 dark:text-foreground">
                 {education.degree}
               </h3>
               <p className="text-blue-600 font-medium">

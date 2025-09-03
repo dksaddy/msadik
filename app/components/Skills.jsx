@@ -123,7 +123,7 @@ export default function Skills() {
                   <div className={`p-3 rounded-lg text-white`}>
                     {skill.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 ml-4">
+                  <h3 className="text-2xl font-bold text-gray-800 ml-4 dark:text-foreground">
                     {skill.name}
                   </h3>
                 </div>

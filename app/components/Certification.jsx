@@ -60,11 +60,11 @@ export default function Certification() {
                     alt="Institution Logo"
                     className="w-15 h-15 rounded object-cover border border-blue-400"
                   />
-                  <p className="text-sm font-semibold text-gray-800">{cert.institution}</p>
+                  <p className="text-sm font-semibold text-gray-800 dark:text-foreground">{cert.institution}</p>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base font-semibold text-gray-800 mb-4">{cert.title}</h3>
+                <h3 className="text-base font-semibold text-gray-800 dark:text-foreground mb-4">{cert.title}</h3>
 
                 {/* Completion date */}
                 <div className="mb-4">
