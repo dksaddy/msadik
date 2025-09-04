@@ -29,7 +29,7 @@ function GodRays({ raysCount = 20 }) {
     >
       <defs>
         <linearGradient id="rayGradient" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="rgba(66, 53, 243, 0.6)" />
+          <stop offset="0%" stopColor="rgba(14, 10, 241, 0.6)" />
           <stop offset="100%" stopColor="rgba(211, 233, 13, 0.5)" />
         </linearGradient>
         <filter id="blurFilter">
@@ -117,18 +117,18 @@ export default function About() {
             <h3 className="text-2xl font-bold mb-4 dark:text-foreground">
               Software Engineer & Lifelong Learner
             </h3>
-            <p className="text-base mb-4 leading-relaxed dark:text-foreground">
+            <p className="text-base mb-4 leading-relaxed dark:text-foreground text-gray-600">
               I'm a Computer Science graduate from United International University,
               driven by a passion for software engineering. I thrive in environments
               where I can work on both the front-end and back-end, bringing ideas to life.
             </p>
-            <p className="text-base mb-4 leading-relaxed dark:text-foreground">
+            <p className="text-base mb-4 leading-relaxed dark:text-foreground text-gray-600">
               Java and JavaScript are my go-to languages, but I also have a soft spot for C.
               There's a unique thrill in communicating with a computer through code. My
               experience includes four academic projects and an e-commerce site built
               on WordPress, which gave me a solid grasp of CMS platforms.
             </p>
-            <p className="text-base leading-relaxed dark:text-foreground">
+            <p className="text-base leading-relaxed dark:text-foreground text-gray-600">
               On the design front, I'm comfortable with Figma and Framer. I live by
               the idea of being a versatile "jack of all trades," constantly learning
               and growing. I'm excited to collaborate on projects that push boundaries
