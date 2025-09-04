@@ -3,24 +3,29 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function MatrixClock() {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState(null); // null until mounted
 
   useEffect(() => {
+    setTime(new Date()); // set after mount
     const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
+
+  if (!time) {
+    // Prevent SSR mismatch
+    return null;
+  }
 
   const getFilledBoxes = (totalBoxes, value, unitSize) => {
     return Math.floor(value / unitSize);
   };
 
   const getFilledBoxesProgress = (totalBoxes, value, step) => {
-    // Number of ranges completed (including current one)
     const boxesLit = Math.ceil(value / step);
     return Math.min(boxesLit, totalBoxes);
   };
 
-  const renderMatrix = (filledCount, totalBoxes, isHour = false) => {
+  const renderMatrix = (filledCount, totalBoxes) => {
     return (
       <div className="grid grid-cols-3 gap-[5px]">
         {Array.from({ length: totalBoxes }).map((_, i) => {
@@ -33,23 +38,20 @@ export default function MatrixClock() {
             <div
               key={i}
               className={`w-2 h-2 flex items-center justify-center rounded ${boxColor}`}
-            >
-            </div>
+            ></div>
           );
         })}
       </div>
     );
   };
 
-
   const hours = time.getHours() % 12 || 12;
   const minutes = time.getMinutes();
   const seconds = time.getSeconds();
 
-  const filledHours = getFilledBoxes(12, hours, 1); // old style
-  const filledMinutes = getFilledBoxesProgress(12, minutes, 5); // range+progress
-  const filledSeconds = getFilledBoxesProgress(12, seconds, 5); // range+progress
-
+  const filledHours = getFilledBoxes(12, hours, 1);
+  const filledMinutes = getFilledBoxesProgress(12, minutes, 5);
+  const filledSeconds = getFilledBoxesProgress(12, seconds, 5);
 
   return (
     <motion.div
@@ -60,7 +62,7 @@ export default function MatrixClock() {
     >
       <div className="flex items-start gap-4">
         <div className="flex flex-col items-center">
-          {renderMatrix(filledHours, 12, true)}
+          {renderMatrix(filledHours, 12)}
         </div>
 
         <div className="flex flex-col items-center">
