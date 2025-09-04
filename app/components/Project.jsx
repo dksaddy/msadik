@@ -39,7 +39,10 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-15 px-4 md:px-8 lg:px-15 bg-white overflow-hidden">
+    <section
+      id="projects"
+      className="min-h-screen py-15 px-4 md:px-8 lg:px-15 bg-white overflow-hidden dark:bg-background"
+    >
       <div className="max-w-7xl mx-auto">
 
         <SectionHeader header="Featured PROJECTS" tittle="My Works and Collaborations" />
@@ -60,7 +63,7 @@ export default function Projects() {
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                     {/* Title + Role */}
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-800">{project.title}</h3>
+                      <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground">{project.title}</h3>
                       <p className="text-indigo-600 font-medium">{project.role}</p>
                     </div>
 

@@ -21,10 +21,21 @@ export default function Certification() {
       verifyLink: "#",
       logo: "/nsda.png", // image file in /public or use full URL
     },
+    {
+      title: "The Complete Full-Stack Web Development Bootcamp",
+      institution: "Udemy",
+      completionDate: "On Going",
+      stack: ["Bootstrap", "HTML5", "CSS3", "Javascript", "UI", "UX"],
+      verifyLink: "#",
+      logo: "/udemy.webp", // image file in /public or use full URL
+    },
   ];
 
   return (
-    <section id="certification" className="py-16 px-4 md:px-8 lg:px-16 bg-white overflow-hidden">
+    <section 
+    id="certification" 
+    className="min-h-screen py-16 px-4 md:px-8 lg:px-16 bg-white overflow-hidden dark:bg-background"
+    >
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           header="Certification & RECOGNITION"
@@ -49,11 +60,11 @@ export default function Certification() {
                     alt="Institution Logo"
                     className="w-15 h-15 rounded object-cover border border-blue-400"
                   />
-                  <p className="text-sm font-semibold text-gray-800">{cert.institution}</p>
+                  <p className="text-sm font-semibold text-gray-800 dark:text-foreground">{cert.institution}</p>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base font-semibold text-gray-800 mb-4">{cert.title}</h3>
+                <h3 className="text-base font-semibold text-gray-800 dark:text-foreground mb-4">{cert.title}</h3>
 
                 {/* Completion date */}
                 <div className="mb-4">

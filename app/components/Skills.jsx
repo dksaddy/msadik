@@ -98,7 +98,10 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-10 px-4 md:px-8 lg:px-10 bg-white overflow-hidden">
+    <section 
+    id="skills" 
+    className="min-h-screen py-10 px-4 md:px-8 lg:px-10 bg-white overflow-hidden dark:bg-background"
+    >
       <div className="max-w-7xl mx-auto">
 
         <SectionHeader header="Tech STACKS" tittle="Language, Framworks & Tools I'm Using For Work"/>
@@ -120,7 +123,7 @@ export default function Skills() {
                   <div className={`p-3 rounded-lg text-white`}>
                     {skill.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 ml-4">
+                  <h3 className="text-2xl font-bold text-gray-800 ml-4 dark:text-foreground">
                     {skill.name}
                   </h3>
                 </div>

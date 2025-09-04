@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { IoIosDownload } from "react-icons/io";
-import "../globals.css"; // Ensure global styles are imported
+import "./DownloadCV.css";
 
 export default function DownloadCV() {
     return (
