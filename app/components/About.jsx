@@ -1,16 +1,25 @@
 "use client";
 import { motion } from "framer-motion";
 import SectionHeader from "../helper/SectionHeader";
+import { useState, useEffect } from "react";
 
 function GodRays({ raysCount = 20 }) {
-  const rays = Array.from({ length: raysCount }, (_, i) => ({
-    id: i,
-    rotate: -60 + (i * 120) / raysCount, // fan out diagonally
-    opacity: 0.05 + Math.random() * 0.1,
-    duration: 2 + Math.random() * 10,
-    delay: Math.random() * 1,
-    scale: 1 + Math.random() * 0.2,
-  }));
+  const [rays, setRays] = useState([]);
+
+  useEffect(() => {
+    setRays(
+      Array.from({ length: raysCount }, (_, i) => ({
+        id: i,
+        rotate: -60 + (i * 120) / raysCount,
+        opacity: 0.05 + Math.random() * 0.1,
+        duration: 2 + Math.random() * 10,
+        delay: Math.random() * 1,
+        scale: 1 + Math.random() * 0.2,
+      }))
+    );
+  }, [raysCount]);
+
+  if (rays.length === 0) return null; // prevent SSR rendering mismatch
 
   return (
     <svg
@@ -23,13 +32,16 @@ function GodRays({ raysCount = 20 }) {
           <stop offset="0%" stopColor="rgba(66, 53, 243, 0.6)" />
           <stop offset="100%" stopColor="rgba(211, 233, 13, 0.5)" />
         </linearGradient>
+        <filter id="blurFilter">
+          <feGaussianBlur stdDeviation="50" />
+        </filter>
       </defs>
 
       {rays.map((ray) => (
         <motion.rect
           key={ray.id}
-          x="400" // center X
-          y="-300" // start above
+          x="400"
+          y="-300"
           width="6"
           height="800"
           rx="3"
@@ -48,7 +60,6 @@ function GodRays({ raysCount = 20 }) {
         />
       ))}
 
-      {/* Soft radial glow at top-center */}
       <circle
         cx="400"
         cy="0"
@@ -57,16 +68,9 @@ function GodRays({ raysCount = 20 }) {
         opacity={0.3}
         filter="url(#blurFilter)"
       />
-
-      <defs>
-        <filter id="blurFilter">
-          <feGaussianBlur stdDeviation="50" />
-        </filter>
-      </defs>
     </svg>
   );
 }
-
 
 
 export default function About() {
