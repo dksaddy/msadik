@@ -64,7 +64,7 @@ export default function Projects() {
                     {/* Title + Role */}
                     <div>
                       <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground">{project.title}</h3>
-                      <p className="text-indigo-600 font-medium">{project.role}</p>
+                      <p className="text-gary-600 font-medium dark:text-foreground">{project.role}</p>
                     </div>
 
                     {/* GitHub/Deployed Links */}
@@ -89,7 +89,7 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-6">{project.description}</p>
+                  <p className="text-gray-700 dark:text-foreground mb-6">{project.description}</p>
 
                   <div className="mb-6">
                     <h4 className="text-sm font-semibold text-gray-500 mb-2">TECH STACK</h4>

@@ -27,10 +27,10 @@ export default function Hero() {
     dark:bg-background"
     >
 
-      <div className="absolute inset-0">
+      {/*<div className="absolute inset-0">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
-      </div>
+      </div>*/}
       {/* Console Log Cards */}
       {consoleLogMessages.map((msg, index) => (
         <ConsoleLogCard
