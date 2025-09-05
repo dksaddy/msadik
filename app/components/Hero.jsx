@@ -9,8 +9,8 @@ import { FaLinkedin } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import DownloadCV from '../helper/DownloadCV';
 import EmailCopy from '../helper/EmailAddress';
-import FloatingPaths from '../backgrounds/FloatingPath';
-
+import ParticlesComponent from '../Backgrounds/ParticlesComponent';
+import { useTheme } from 'next-themes';
 
 export default function Hero() {
   const consoleLogMessages = [
@@ -19,18 +19,17 @@ export default function Hero() {
     { text: 'Compiling assets...', position: 'bottom-8 left-4 md:bottom-20 md:left-20' },
     { text: 'Deployment successful!', position: 'bottom-4 right-4 md:bottom-10 md:right-20' },
   ];
+  const { theme } = useTheme();
 
   return (
     <section
       id="home"
-      className="min-h-screen relative flex items-center justify-center bg-white text-gray-800 overflow-hidden py-24 lg:py-10
-    dark:bg-background"
+      className="min-h-screen relative flex items-center justify-center overflow-hidden py-24 lg:py-10"
     >
 
-      {/*<div className="absolute inset-0">
-        <FloatingPaths position={1} />
-        <FloatingPaths position={-1} />
-      </div>*/}
+       {/* Background Particles */}
+      <ParticlesComponent theme={theme} />
+
       {/* Console Log Cards */}
       {consoleLogMessages.map((msg, index) => (
         <ConsoleLogCard

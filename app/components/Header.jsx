@@ -6,7 +6,7 @@ import { useTheme } from "next-themes"
 const menuItems = [
   { name: "ABOUT", href: "#about", key: "about", icon: "👤" },
   { name: "EDUCATION", href: "#education", key: "education", icon: "🎓" },
-  { name: "WORK", href: "#experience", key: "work", icon: "💼" },
+  //{ name: "WORK", href: "#experience", key: "work", icon: "💼" },
   { name: "STACK", href: "#skills", key: "stack", icon: "⚡" },
   { name: "PROJECT", href: "#projects", key: "project", icon: "📁" },
   { name: "CERTIFICATE", href: "#certification", key: "certificate", icon: "📜" },
@@ -142,7 +142,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <motion.button
             type="button"
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-white"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -187,15 +187,15 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-black/20 lg:hidden"
               onClick={() => setMenuOpen(false)}
             />
             <motion.div
               initial={{ y: -20, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: -20, opacity: 0, scale: 0.95 }}
-              transition={{ type: "spring", bounce: 0.1, duration: 0.4 }}
-              className="fixed top-16 left-4 right-4 z-50 lg:hidden bg-white/95 backdrop-blur-xl border border-gray-200/50 rounded-2xl shadow-2xl overflow-hidden dark:bg-gray-900/95 dark:border-gray-700/50"
+              transition={{ type: "spring", bounce: 0.1, duration: 0.2 }}
+              className="fixed top-16 left-4 right-4 z-50 lg:hidden bg-white/95 border border-gray-200/50 rounded-2xl shadow-2xl overflow-hidden dark:bg-gray-900/95 dark:border-gray-700/50"
             >
               <div className="p-6">
                 {/* Mobile Navigation Grid */}

@@ -31,7 +31,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="relative min-h-screen py-15 px-4 md:px-8 lg:px-16 bg-white dark:bg-background overflow-hidden"
+      className="relative min-h-screen py-15 px-4 md:px-8 lg:px-16 overflow-hidden"
     >
       {/* Animated dots behind content */}
       {/*<DreamDots />*/}
