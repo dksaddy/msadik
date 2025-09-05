@@ -10,7 +10,7 @@ export default function About() {
       className="min-h-screen py-15 bg-white dark:bg-background relative overflow-hidden"
     >
       {/* God Rays Background */}
-      <GodRays />
+      {/*<GodRays />*/}
 
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeader

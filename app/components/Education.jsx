@@ -34,7 +34,7 @@ export default function Education() {
       className="relative min-h-screen py-15 px-4 md:px-8 lg:px-16 bg-white dark:bg-background overflow-hidden"
     >
       {/* Animated dots behind content */}
-      <DreamDots />
+      {/*<DreamDots />*/}
 
       {/* Content above dots */}
       <div className="mx-auto relative z-10">
