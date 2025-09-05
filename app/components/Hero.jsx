@@ -9,7 +9,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import DownloadCV from '../helper/DownloadCV';
 import EmailCopy from '../helper/EmailAddress';
-import ParticlesComponent from '../Backgrounds/ParticlesComponent';
+import ParticlesComponent from '../backgrounds/ParticlesComponent';
 import { useTheme } from 'next-themes';
 
 export default function Hero() {
