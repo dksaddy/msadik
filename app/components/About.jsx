@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen py-15 bg-white dark:bg-background relative overflow-hidden"
+      className="min-h-screen py-15 relative overflow-hidden"
     >
       {/* God Rays Background */}
       {/*<GodRays />*/}
