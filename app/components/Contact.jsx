@@ -116,17 +116,17 @@ export default function ContactTerminal() {
                 <SectionHeader header="Contact ME" tittle="Happy to Collaborate" />
                 <div className="container mx-auto px-4 flex justify-center items-center">
                     <motion.div
-                        className="w-full max-w-2xl rounded-lg shadow-lg overflow-hidden"
+                        className="w-full max-w-2xl shadow-lg overflow-hidden"
                         initial={{ opacity: 0, scale: .4 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                     >
                         {/* Terminal header */}
-                        <div className="flex items-center justify-between border border-gray-200 px-3 py-1">
-                            <span className="text-gray-600 text-sm font-mono font-bold">SADDY Terminal</span>
+                        <div className="flex items-center justify-between border-4 border-gray-200 px-3 py-1">
+                            <span className="dark:text-foreground text-sm font-mono font-bold">SADDY Terminal</span>
                             <button
                                 onClick={handleClear}
-                                className="w-5 h-5 flex items-center justify-center bg-red-600 hover:bg-red-700 rounded text-white font-bold leading-none"
+                                className="w-5 h-5 flex items-center justify-center bg-red-600 hover:bg-red-700 text-white font-bold leading-none"
                             >
                                 ×
                             </button>
@@ -135,7 +135,7 @@ export default function ContactTerminal() {
                         {/* Terminal body */}
                         <div
                             ref={terminalRef}
-                            className="p-3 font-mono text-green-400 h-96 overflow-y-auto bg-black"
+                            className="p-3 font-mono dark:text-green-400 h-96 overflow-y-auto border-4 border-gray-200"
                         // style={{
                         //     backgroundImage: "url('/termi3.gif')",
                         //     backgroundSize: "cover",
@@ -154,7 +154,7 @@ export default function ContactTerminal() {
                                                     value={inputValues[line.field]}
                                                     onChange={(e) => handleChange(e, line.field)}
                                                     onKeyDown={(e) => handleKeyDown(e, line.field)}
-                                                    className="bg-transparent text-green-400 outline-none w-full resize-none"
+                                                    className="bg-transparent dark:text-green-400 outline-none w-full resize-none"
                                                     rows={3}
                                                     placeholder="Type your message and add #100# at the end"
                                                     autoFocus={line.field !== "name"}
@@ -165,7 +165,7 @@ export default function ContactTerminal() {
                                                     value={inputValues[line.field]}
                                                     onChange={(e) => handleChange(e, line.field)}
                                                     onKeyDown={(e) => handleKeyDown(e, line.field)}
-                                                    className="bg-transparent text-green-400 outline-none w-full"
+                                                    className="bg-transparent dark:text-green-400 outline-none w-full"
                                                     autoFocus={line.field !== "name"}
                                                 />
                                             )}
@@ -180,7 +180,7 @@ export default function ContactTerminal() {
                                 </div>
                             ))}
 
-                            <div className="mt-4 text-green-300 text-center font-mono">{statusMessage}</div>
+                            <div className="mt-4 dark:text-green-300 text-center font-mono">{statusMessage}</div>
                         </div>
 
 
