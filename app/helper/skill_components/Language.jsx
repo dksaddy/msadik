@@ -1,26 +1,22 @@
-import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltRight } from "react-icons/fa";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiTypescript, SiVite, SiMui } from "react-icons/si";
+import { FaJsSquare, FaPython, FaPhp, FaJava, FaLongArrowAltRight } from "react-icons/fa";
+import { SiTypescript, SiC, SiCplusplus } from "react-icons/si";
 import { CgSmileNone } from "react-icons/cg";
 import { motion } from "framer-motion";
 
 export default function Backend() {
     const skills = [
-        { name: "HTML5", icon: <FaHtml5 className="text-orange-600" /> },
-        { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" /> },
-        { name: "JavaScript", icon: <FaJsSquare className="text-yellow-500" /> },
-        { name: "React", icon: <FaReact className="text-blue-400" /> },
-        { name: "Next.js", icon: <RiNextjsFill className="text-black dark:text-white" /> },
-        { name: "Tailwind", icon: <RiTailwindCssFill className="text-cyan-500" /> },
-        { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" /> },
+        { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
+        { name: "Java", icon: <FaJava className="text-blue-600" /> },
+        { name: "Python", icon: <FaPython className="text-purple-600" /> },
+        { name: "Php", icon: <FaPhp className="text-blue-400" /> },
+        { name: "C", icon: <SiC className="text-black dark:text-white" /> },
+        { name: "C++", icon: <SiCplusplus className="text-cyan-500" /> },
         { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
-        { name: "Vite", icon: <SiVite className="text-purple-500" /> },
-        { name: "Mui", icon: <SiMui className="text-blue-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "What", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "To", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Learn", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Next", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "!!!", icon: <CgSmileNone className="text-gray-400" /> },
     ];
 
     // Generate rows: 5, 4, 3, 2, 1

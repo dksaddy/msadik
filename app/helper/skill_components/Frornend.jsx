@@ -1,6 +1,6 @@
-import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltRight, } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltRight, } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiTypescript, SiVite, SiMui } from "react-icons/si";
+import { SiVite, SiMui, SiFramer } from "react-icons/si";
 import { CgSmileNone } from "react-icons/cg";
 import { motion } from "framer-motion";
 
@@ -8,18 +8,16 @@ export default function Frontend() {
     const skills = [
         { name: "HTML5", icon: <FaHtml5 className="text-orange-600" /> },
         { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" /> },
-        { name: "JavaScript", icon: <FaJsSquare className="text-yellow-500" /> },
         { name: "React", icon: <FaReact className="text-blue-400" /> },
         { name: "Next.js", icon: <RiNextjsFill className="text-black dark:text-white" /> },
-        { name: "Tailwind CSS", icon: <RiTailwindCssFill className="text-cyan-500" /> },
+        { name: "Tailwind", icon: <RiTailwindCssFill className="text-cyan-500" /> },
         { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" /> },
-        { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
         { name: "Vite", icon: <SiVite className="text-purple-500" /> },
         { name: "Mui", icon: <SiMui className="text-blue-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Framer", icon: <SiFramer className="text-black dark:text-white" /> },
+        { name: "Comming", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Soon", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "More", icon: <CgSmileNone className="text-gray-400" /> },
         { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
     ];
 

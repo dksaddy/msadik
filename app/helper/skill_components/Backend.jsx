@@ -1,25 +1,22 @@
-import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltLeft } from "react-icons/fa";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiTypescript, SiVite, SiMui } from "react-icons/si";
+import { FaNode, FaLongArrowAltLeft, FaMoneyBillAlt } from "react-icons/fa";
+import { SiExpress, SiAegisauthenticator, SiJitsi, SiSocketdotio, SiMongodb, SiMysql } from "react-icons/si";
 import { CgSmileNone } from "react-icons/cg";
 import { motion } from "framer-motion";
 
 export default function Backend() {
     const skills = [
-        { name: "HTML5", icon: <FaHtml5 className="text-orange-600" /> },
-        { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" /> },
-        { name: "JavaScript", icon: <FaJsSquare className="text-yellow-500" /> },
-        { name: "React", icon: <FaReact className="text-blue-400" /> },
-        { name: "Next.js", icon: <RiNextjsFill className="text-black dark:text-white" /> },
-        { name: "Tailwind", icon: <RiTailwindCssFill className="text-cyan-500" /> },
-        { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" /> },
-        { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
-        { name: "Vite", icon: <SiVite className="text-purple-500" /> },
-        { name: "Mui", icon: <SiMui className="text-blue-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Express", icon: <SiExpress className="text-black" /> },
+        { name: "Node", icon: <FaNode className="text-green-600" /> },
+        { name: "JWT Auth", icon: <SiAegisauthenticator className="text-yellow-500" /> },
+        { name: "SSLComerz", icon: <FaMoneyBillAlt className="text-blue-400" /> },
+        { name: "Jitsi", icon: <SiJitsi className="text-black dark:text-white" /> },
+        { name: "Socket.io", icon: <SiSocketdotio className="text-cyan-500" /> },
+        { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
+        { name: "Mysql", icon: <SiMysql className="text-purple-900" /> },
+        { name: "What", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "To", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Do", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Now!", icon: <CgSmileNone className="text-gray-400" /> },
         { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
     ];
 
@@ -43,7 +40,7 @@ export default function Backend() {
                 <span><FaLongArrowAltLeft /></span>
                 <h3>BACKEND</h3>
             </motion.div>
-            
+
             {rows.map((row, rowIndex) => (
                 <div key={rowIndex} className="flex flex-row gap-2 sm:gap-4 justify-start">
                     {row.map((skill, index) => (

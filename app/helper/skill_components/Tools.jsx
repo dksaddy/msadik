@@ -1,25 +1,23 @@
-import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltLeft, } from "react-icons/fa";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiTypescript, SiVite, SiMui } from "react-icons/si";
+import { FaGitAlt, FaGithub, FaNpm, FaFileImport, FaLongArrowAltLeft, } from "react-icons/fa";
+import { SiTypescript, SiVite, SiPostman, SiVercel, SiSupabase } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 import { CgSmileNone } from "react-icons/cg";
 import { motion } from "framer-motion";
 
 export default function Frontend() {
     const skills = [
-        { name: "HTML5", icon: <FaHtml5 className="text-orange-600" /> },
-        { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" /> },
-        { name: "JavaScript", icon: <FaJsSquare className="text-yellow-500" /> },
-        { name: "React", icon: <FaReact className="text-blue-400" /> },
-        { name: "Next.js", icon: <RiNextjsFill className="text-black dark:text-white" /> },
-        { name: "Tailwind CSS", icon: <RiTailwindCssFill className="text-cyan-500" /> },
-        { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" /> },
-        { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
-        { name: "Vite", icon: <SiVite className="text-purple-500" /> },
-        { name: "Mui", icon: <SiMui className="text-blue-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
+        { name: "Postman", icon: <SiPostman className="text-orange-400" /> },
+        { name: "Vercel", icon: <SiVercel className="text-black" /> },
+        { name: "NPM", icon: <FaNpm className="text-red-600" /> },
+        { name: "GitHub", icon: <FaGithub className="text-black dark:text-white" /> },
+        { name: "Supabase", icon: <SiSupabase className="text-green-600" /> },
+        { name: "Multer", icon: <FaFileImport className="text-purple-600" /> },
+        { name: "VS Code", icon: <VscVscode className="text-blue-500" /> },
+        { name: "Hire", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Me", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Please!", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "HAHA", icon: <CgSmileNone className="text-gray-400" /> },
         { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
     ];
 
