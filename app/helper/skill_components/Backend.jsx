@@ -1,4 +1,4 @@
-import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltRight } from "react-icons/fa";
+import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltLeft } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiVite, SiMui } from "react-icons/si";
 import { CgSmileNone } from "react-icons/cg";
@@ -33,12 +33,12 @@ export default function Backend() {
 
     return (
         <div className="flex flex-col items-end gap-4 rounded-lg">
-            <div className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">
-                <h3>FrontEnd</h3>
-                <span><FaLongArrowAltRight /></span>
+            <div className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200">
+                <span><FaLongArrowAltLeft /></span>
+                <h3>BACKEND</h3>
             </div>
             {rows.map((row, rowIndex) => (
-                <div key={rowIndex} className="flex flex-row gap-4 justify-start">
+                <div key={rowIndex} className="flex flex-row gap-2 sm:gap-4 justify-start">
                     {row.map((skill, index) => (
                         <div
                             key={index}
@@ -47,7 +47,7 @@ export default function Backend() {
                      hover:shadow-lg hover:scale-105 transition-transform duration-300 
                      bg-white dark:bg-gray-800 cursor-pointer"
                         >
-                            <p className="text-4xl mb-1 drop-shadow-sm">{skill.icon}</p>
+                            <p className="text-2xl sm:text-4xl mb-1 drop-shadow-sm">{skill.icon}</p>
                             <p className="text-center text-[10px] font-bold text-gray-800 dark:text-gray-200">
                                 {skill.name}
                             </p>

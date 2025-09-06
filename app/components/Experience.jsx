@@ -15,14 +15,6 @@ export default function Experience() {
         <SectionHeader header="Work EXPERIENCE" tittle="My Experience and Contribution" />
 
 
-
-
-
-
-
-
-
-
         <div className="p-4 relative grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-items-center">
           {/* Top row */}
           <div className="w-full">
@@ -33,7 +25,7 @@ export default function Experience() {
           </div>
 
           {/* Circular spinning text */}
-          <div className="w-full md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 flex justify-center">
+          <div className="md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 flex justify-center">
             <svg
               viewBox="0 0 200 200"
               className="w-32 h-32 md:w-40 md:h-40 animate-[spin_20s_linear_infinite]"
