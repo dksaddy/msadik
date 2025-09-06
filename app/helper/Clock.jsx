@@ -32,7 +32,7 @@ export default function MatrixClock() {
           const isFilled = i < filledCount;
           const boxColor = isFilled
             ? "bg-black dark:bg-white"
-            : "bg-green-500 dark:bg-green-500 animate-bounce";
+            : "bg-green-500 dark:bg-green-500";
 
           return (
             <div
