@@ -3,7 +3,6 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiVite, SiMui } from "react-icons/si";
 import { CgSmileNone } from "react-icons/cg";
 import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/app/utils/SpanAnimation";
 
 export default function Frontend() {
     const skills = [
@@ -49,12 +48,12 @@ export default function Frontend() {
 
             {/* Triangle pattern (always visible) */}
             {rows.map((row, rowIndex) => (
-                <motion.div
+                <div
                     key={rowIndex}
                     className="flex flex-row gap-2 sm:gap-4 justify-start"
                 >
                     {row.map((skill, index) => (
-                        <motion.div
+                        <div
                             key={index}
                             className="flex flex-col items-center justify-center 
                             w-16 h-16
@@ -68,9 +67,9 @@ export default function Frontend() {
                             <p className="text-center text-[10px] font-bold text-gray-800 dark:text-gray-200">
                                 {skill.name}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
-                </motion.div>
+                </div>
             ))}
 
         </div>
