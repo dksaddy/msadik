@@ -32,7 +32,7 @@ export default function ContactTerminal() {
   }, [lines, terminalFlowLines, currentTerminalLine]);
 
   const handleClear = () => {
-    setLines(["1. Easy Method", "2. Terminal Contact"]);
+    setLines(["1. Easy Method", "2. Terminal Contact", "0. Clear Terminal"]);
     setInputValue("");
     setMode(null);
     setTerminalFlowLines([]);
@@ -87,7 +87,20 @@ export default function ContactTerminal() {
           setCurrentTerminalLine((prev) => prev + 1);
         }
       } else if (mode === "easy") {
-        setLines((prev) => [...prev, `You clicked: ${input}`]);
+        // If user typed the option in terminal input
+        const option = [
+          { name: "Phone", url: "tel:+8801875368551" },
+          { name: "Mail", url: "mailto:msadik3086@gmail.com" },
+          { name: "WhatsApp", url: "https://wa.me/1234567890" },
+          { name: "Messenger", url: "https://m.me/yourusername" },
+        ].find(opt => opt.name.toLowerCase() === input.toLowerCase());
+
+        if (option) {
+          setLines(prev => [...prev, `You clicked: ${option.name}`]);
+          window.open(option.url, "_blank", "noopener,noreferrer");
+        } else {
+          setLines(prev => [...prev, "❌ Invalid option"]);
+        }
       }
 
       setInputValue("");
