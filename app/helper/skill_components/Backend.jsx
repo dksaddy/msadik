@@ -2,6 +2,7 @@ import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltLef
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiVite, SiMui } from "react-icons/si";
 import { CgSmileNone } from "react-icons/cg";
+import { motion } from "framer-motion";
 
 export default function Backend() {
     const skills = [
@@ -33,10 +34,16 @@ export default function Backend() {
 
     return (
         <div className="flex flex-col items-end gap-4 rounded-lg">
-            <div className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200">
+            <motion.div
+                className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200"
+                initial={{ x: 150, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            >
                 <span><FaLongArrowAltLeft /></span>
                 <h3>BACKEND</h3>
-            </div>
+            </motion.div>
+            
             {rows.map((row, rowIndex) => (
                 <div key={rowIndex} className="flex flex-row gap-2 sm:gap-4 justify-start">
                     {row.map((skill, index) => (

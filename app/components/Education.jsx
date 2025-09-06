@@ -1,10 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaBookOpen } from "react-icons/fa";
 import SectionHeader from '../helper/SectionHeader';
 import { containerVariants, itemVariants } from "../utils/SpanAnimation";
-import DreamDots from "../backgrounds/DreamDot";
 
 export default function Education() {
   const education = {

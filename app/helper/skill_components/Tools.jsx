@@ -2,6 +2,7 @@ import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltLef
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiVite, SiMui } from "react-icons/si";
 import { CgSmileNone } from "react-icons/cg";
+import { motion } from "framer-motion";
 
 export default function Frontend() {
     const skills = [
@@ -34,10 +35,15 @@ export default function Frontend() {
     return (
         <div className="flex flex-col items-end gap-4 rounded-lg">
             {/* Header */}
-            <div className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200 mt-2">
+            <motion.div
+                className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200 mt-2"
+                initial={{ x: 150, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            >
                 <span><FaLongArrowAltLeft /></span>
                 <h3>TOOLS</h3>
-            </div>
+            </motion.div>
 
             {/* Triangle pattern (always visible) */}
             {rows.map((row, rowIndex) => (

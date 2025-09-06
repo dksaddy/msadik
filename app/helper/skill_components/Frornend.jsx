@@ -2,6 +2,8 @@ import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltRig
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiVite, SiMui } from "react-icons/si";
 import { CgSmileNone } from "react-icons/cg";
+import { motion } from "framer-motion";
+import { containerVariants, itemVariants } from "@/app/utils/SpanAnimation";
 
 export default function Frontend() {
     const skills = [
@@ -34,24 +36,31 @@ export default function Frontend() {
     return (
         <div className="flex flex-col items-start gap-4 rounded-lg">
             {/* Header */}
-            <div className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200">
+            <motion.div
+                className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200"
+                initial={{ x: -150, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            >
                 <h3>FRONTEND</h3>
-                <span>
-                    <FaLongArrowAltRight />
-                </span>
-            </div>
+                <span><FaLongArrowAltRight /></span>
+            </motion.div>
+
 
             {/* Triangle pattern (always visible) */}
             {rows.map((row, rowIndex) => (
-                <div key={rowIndex} className="flex flex-row gap-2 sm:gap-4 justify-start">
+                <motion.div
+                    key={rowIndex}
+                    className="flex flex-row gap-2 sm:gap-4 justify-start"
+                >
                     {row.map((skill, index) => (
-                        <div
+                        <motion.div
                             key={index}
                             className="flex flex-col items-center justify-center 
-                         w-16 h-16
-                         border rounded-xl shadow-md 
-                         hover:shadow-lg hover:scale-105 transition-transform duration-300 
-                         bg-white dark:bg-gray-800 cursor-pointer"
+                            w-16 h-16
+                            border rounded-xl shadow-md 
+                            hover:shadow-lg hover:scale-105 transition-transform duration-300 
+                            bg-white dark:bg-gray-800 cursor-pointer"
                         >
                             <p className="text-2xl sm:text-4xl mb-1 drop-shadow-sm">
                                 {skill.icon}
@@ -59,10 +68,11 @@ export default function Frontend() {
                             <p className="text-center text-[10px] font-bold text-gray-800 dark:text-gray-200">
                                 {skill.name}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             ))}
+
         </div>
     );
 }
