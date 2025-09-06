@@ -119,7 +119,7 @@ export default function ContactTerminal() {
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
             {/* Terminal header */}
-            <div className="flex items-center justify-between border-b border-gray-300 px-3 py-2 bg-gray-100 dark:bg-gray-800">
+            <div className="flex items-center justify-between border-b border-gray-300 px-3 py-2 bg-gray-100 dark:bg-black">
               <span className="dark:text-foreground text-sm font-mono font-bold">SADDY Terminal</span>
               <button
                 onClick={handleClear}
@@ -132,7 +132,7 @@ export default function ContactTerminal() {
             {/* Terminal body */}
             <div
               ref={terminalRef}
-              className="p-3 font-mono dark:text-green-400 h-96 sm:h-[24rem] overflow-y-auto border-t border-gray-300 bg-gray-50 dark:bg-gray-900"
+              className="p-3 font-mono dark:text-green-400 h-96 sm:h-[24rem] overflow-y-auto border-t border-gray-300 bg-gray-50 dark:bg-black"
             >
               {/* Lines above prompt */}
               {lines.map((line, idx) => (
