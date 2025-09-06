@@ -36,7 +36,7 @@ export default function Backend() {
         <div className="flex flex-col items-end gap-4 rounded-lg">
             <motion.div
                 className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200"
-                initial={{ x: 150, opacity: 0 }}
+                initial={{ x: -150, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
             >

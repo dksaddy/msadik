@@ -37,7 +37,7 @@ export default function Backend() {
 
             <motion.div
                 className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200 mt-2"
-                initial={{ x: -150, opacity: 0 }}
+                initial={{ x: 150, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
             >
