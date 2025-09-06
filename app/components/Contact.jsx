@@ -181,7 +181,6 @@ export default function ContactTerminal() {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyDown={handleKeyDown}
                   className="bg-transparent dark:text-green-400 outline-none flex-1 text-sm sm:text-base px-2 w-full sm:w-auto"
-                  autoFocus
                 />
               </div>
 
