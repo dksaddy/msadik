@@ -12,11 +12,11 @@ export default function Backend() {
         { name: "C", icon: <SiC className="text-black dark:text-white" /> },
         { name: "C++", icon: <SiCplusplus className="text-cyan-500" /> },
         { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
-        { name: "What", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "To", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "Learn", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "Next", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "!!!", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "What", icon: <CgSmileNone className="text-blue-400 dark:text-blue-400" /> },
+        { name: "To", icon: <CgSmileNone className="text-green-400 dark:text-green-400" /> },
+        { name: "Learn", icon: <CgSmileNone className="text-yellow-400 dark:text-yellow-200" /> },
+        { name: "Next", icon: <CgSmileNone className="text-orange-400 dark:text-orange-400" /> },
+        { name: "!!!", icon: <CgSmileNone className="text-black dark:text-white" /> },
     ];
 
     // Generate rows: 5, 4, 3, 2, 1

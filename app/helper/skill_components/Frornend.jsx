@@ -15,9 +15,9 @@ export default function Frontend() {
         { name: "Vite", icon: <SiVite className="text-purple-500" /> },
         { name: "Mui", icon: <SiMui className="text-blue-400" /> },
         { name: "Framer", icon: <SiFramer className="text-black dark:text-white" /> },
-        { name: "Comming", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "Soon", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "More", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Comming", icon: <CgSmileNone className="text-yellow-400 dark:text-yellow-200" /> },
+        { name: "Soon", icon: <CgSmileNone className="text-blue-400 dark:text-blue-400" /> },
+        { name: "More", icon: <CgSmileNone className="text-green-400 dark:text-green-400" /> },
         { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
     ];
 

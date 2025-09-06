@@ -14,10 +14,10 @@ export default function Frontend() {
         { name: "Supabase", icon: <SiSupabase className="text-green-600" /> },
         { name: "Multer", icon: <FaFileImport className="text-purple-600" /> },
         { name: "VS Code", icon: <VscVscode className="text-blue-500" /> },
-        { name: "Hire", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "Me", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "Please!", icon: <CgSmileNone className="text-gray-400" /> },
-        { name: "HAHA", icon: <CgSmileNone className="text-gray-400" /> },
+        { name: "Hire", icon: <CgSmileNone className="text-yellow-400 dark:text-yellow-200" /> },
+        { name: "Me", icon: <CgSmileNone className="text-blue-400 dark:text-blue-400" /> },
+        { name: "Please!", icon: <CgSmileNone className="text-orange-400 dark:text-orange-400" /> },
+        { name: "HAHA", icon: <CgSmileNone className="text-green-400 dark:text-green-200" /> },
         { name: "More...", icon: <CgSmileNone className="text-gray-400" /> },
     ];
 
