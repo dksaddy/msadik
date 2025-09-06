@@ -1,11 +1,4 @@
-import {
-    FaJsSquare,
-    FaHtml5,
-    FaCss3Alt,
-    FaReact,
-    FaBootstrap,
-    FaLongArrowAltRight,
-} from "react-icons/fa";
+import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltRight, } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiVite, SiMui } from "react-icons/si";
 import { CgSmileNone } from "react-icons/cg";

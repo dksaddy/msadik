@@ -1,11 +1,4 @@
-import {
-    FaJsSquare,
-    FaHtml5,
-    FaCss3Alt,
-    FaReact,
-    FaBootstrap,
-    FaLongArrowAltLeft,
-} from "react-icons/fa";
+import { FaJsSquare, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaLongArrowAltLeft, } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiVite, SiMui } from "react-icons/si";
 import { CgSmileNone } from "react-icons/cg";
@@ -41,7 +34,7 @@ export default function Frontend() {
     return (
         <div className="flex flex-col items-end gap-4 rounded-lg">
             {/* Header */}
-            <div className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200">
+            <div className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200 mt-2">
                 <span><FaLongArrowAltLeft /></span>
                 <h3>TOOLS</h3>
             </div>

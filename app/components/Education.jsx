@@ -20,10 +20,7 @@ export default function Education() {
       "System Analysis and Design",
       "Human Computer Interaction",
       "Database Management System",
-      "Object Oriented Programming",
       "Data Structure & Algorithm",
-      "Web Technology",
-      "Operating System",
     ],
   };
 

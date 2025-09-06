@@ -33,7 +33,7 @@ export default function Backend() {
 
     return (
         <div className="flex flex-col items-start gap-4 rounded-lg">
-            <div className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200">
+            <div className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200 mt-2">
                 <h3>LANGUAGE</h3>
                 <span><FaLongArrowAltRight /></span>
             </div>
