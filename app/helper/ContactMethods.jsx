@@ -6,8 +6,8 @@ export default function EasyMethodMenu({ logLine }) {
   const easyOptions = [
     { name: "Phone", url: "tel:+1234567890", icon: <FaPhone /> },
     { name: "Mail", url: "mailto:msadik3086@gmail.com", icon: <FaEnvelope /> },
-    { name: "WhatsApp", url: "https://wa.me/1234567890", icon: <FaWhatsapp /> },
-    { name: "Messenger", url: "https://m.me/yourusername", icon: <FaFacebookMessenger /> },
+    { name: "WhatsApp", url: "https://wa.me/+8801875368551", icon: <FaWhatsapp /> },
+    { name: "Messenger", url: "https://m.me/md.sadik.9822924", icon: <FaFacebookMessenger /> },
   ];
 
   const handleClick = (opt) => {

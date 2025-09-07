@@ -78,6 +78,7 @@ export default function ContactTerminal() {
 
         if (field === "confirm") {
           if (input.toLowerCase() === "okay") {
+            handleClear();
             setStatusMessage("✅ Message sent successfully!");
           } else {
             setStatusMessage("❌ Type 'okay' to send!");
@@ -91,8 +92,8 @@ export default function ContactTerminal() {
         const option = [
           { name: "Phone", url: "tel:+8801875368551" },
           { name: "Mail", url: "mailto:msadik3086@gmail.com" },
-          { name: "WhatsApp", url: "https://wa.me/1234567890" },
-          { name: "Messenger", url: "https://m.me/yourusername" },
+          { name: "WhatsApp", url: "https://wa.me/+8801875368551" },
+          { name: "Messenger", url: "https://m.me/md.sadik.9822924" },
         ].find(opt => opt.name.toLowerCase() === input.toLowerCase());
 
         if (option) {
