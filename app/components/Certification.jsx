@@ -106,7 +106,7 @@ export default function Certification() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2 bg-foreground 
-                    hover:bg-gray-200 hover:text-black 
+                    hover:bg-gray-200 hover:text-black dark:text-black
                     text-white text-xs font-semibold rounded-md transition-colors"
                   >
                     Verify Link
