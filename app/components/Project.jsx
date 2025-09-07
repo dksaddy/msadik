@@ -60,11 +60,10 @@ export default function Projects() {
   rounded-full font-bold 
   transition-all duration-300
   border cursor-pointer
-  ${
-    selectedCategory === category
-      ? "bg-orange-500 text-white hover:bg-gray-400 hover:text-black"
-      : "bg-yellow-200 dark:text-black hover:bg-gray-200 border-gray-300"
-  }
+  ${selectedCategory === category
+      ? "bg-yellow-400 text-black/80 hover:bg-gray-200 hover:text-black"
+      : "bg-yellow-200 dark:text-black hover:bg-gray-100"
+    }
 `;
 
 

@@ -16,7 +16,7 @@ export default function EasyMethodMenu({ logLine }) {
   };
 
   return (
-    <div className="flex flex-wrap gap-3 mt-2">
+    <div className="flex flex-wrap justify-center gap-3 mt-2">
       {easyOptions.map((opt, idx) => (
         <button
           key={idx}

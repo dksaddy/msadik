@@ -59,7 +59,7 @@ export default function Hero() {
           <MatrixClock />
 
           <div className="rounded-lg p-2 max-w-sm w-full mx-auto">
-            <div className="flex items-center space-x-5 shadow-sm rounded-l-4xl p-5 dark:border">
+            <div className="flex items-center space-x-5 shadow-sm rounded-l-4xl p-5 dark:border bg-background">
 
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-gray-300">
                 <img
@@ -75,7 +75,7 @@ export default function Hero() {
                   Mohiuddin Mohammad Sadik
                 </h3>
                 <p className="text-gray-600 text-xs md:text-sm mb-1 dark:text-foreground">Dhaka, Bangladesh</p>
-                <EmailCopy hero={true} />
+                <EmailCopy />
               </div>
             </div>
           </div>
