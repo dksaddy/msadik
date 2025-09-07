@@ -2,26 +2,60 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "../helper/SectionHeader";
-import EasyMethodMenu from "../helper/ContactMethods";
 
 export default function ContactTerminal() {
-  const terminalRef = useRef(null);
-  const [lines, setLines] = useState(["1. Easy Method", "2. Terminal Contact"]);
-  const [inputValue, setInputValue] = useState("");
-  const [mode, setMode] = useState(null);
-  const [statusMessage, setStatusMessage] = useState("");
-
-  const [terminalFlowLines, setTerminalFlowLines] = useState([]);
-  const [currentTerminalLine, setCurrentTerminalLine] = useState(0);
-  const [inputFields, setInputFields] = useState({
+  const [currentLine, setCurrentLine] = useState(0);
+  const [displayed, setDisplayed] = useState([]);
+  const [inputValues, setInputValues] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
     confirm: "",
   });
+  const [statusMessage, setStatusMessage] = useState("Message not sent yet");
+  const [sent, setSent] = useState(false); // ✅ lock flag
+  const [otp] = useState(() =>
+    String(Math.floor(Math.random() * 10000)).padStart(4, "0")
+  );
+  const terminalRef = useRef(null);
 
-  // Scroll to bottom
+  const lines = [
+    { text: "Hello there, Greetings! follow the instruction >>>>>", field: null },
+    { text: "Your name: ", field: "name" },
+    { text: "Your email: ", field: "email" },
+    { text: "Subject: ", field: "subject" },
+    { text: "Message: ", field: "message" },
+    { text: `Type ${otp} to send: `, field: "confirm" },
+  ];
+
+  // Typing animation
+  useEffect(() => {
+    if (currentLine < lines.length) {
+      const line = lines[currentLine];
+      let i = 0;
+
+      const typing = setInterval(() => {
+        setDisplayed((prev) => {
+          const newLines = [...prev];
+          if (!newLines[currentLine]) newLines[currentLine] = "";
+          newLines[currentLine] = line.text.slice(0, i + 1);
+          return newLines;
+        });
+        i++;
+        if (i === line.text.length) {
+          clearInterval(typing);
+          if (!line.field) {
+            setTimeout(() => setCurrentLine((prev) => prev + 1), 500);
+          }
+        }
+      }, 40);
+
+      return () => clearInterval(typing);
+    }
+  }, [currentLine]);
+
+  // Auto scroll
   useEffect(() => {
     if (terminalRef.current) {
       terminalRef.current.scrollTo({
@@ -29,102 +63,78 @@ export default function ContactTerminal() {
         behavior: "smooth",
       });
     }
-  }, [lines, terminalFlowLines, currentTerminalLine]);
+  }, [currentLine, displayed, statusMessage]);
 
-  const handleClear = () => {
-    setLines(["1. Easy Method", "2. Terminal Contact", "0. Clear Terminal"]);
-    setInputValue("");
-    setMode(null);
-    setTerminalFlowLines([]);
-    setCurrentTerminalLine(0);
-    setInputFields({ name: "", email: "", subject: "", message: "", confirm: "" });
-    setStatusMessage("");
-  };
-
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e, field) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      const input = inputValue.trim();
 
-      if (input === "0") {
-        handleClear();
+      if (sent) return; // ✅ block typing after success
+
+      if (field === "message" && !inputValues.message.includes("#100#")) {
+        setStatusMessage("Type #100# at the end to finish your message");
         return;
       }
 
-      if (!input) return;
-
-      if (!mode) {
-        if (input === "1") {
-          setMode("easy");
-          setLines((prev) => [...prev, "Select a contact method:"]);
-        } else if (input === "2") {
-          setMode("terminal");
-          setTerminalFlowLines([
-            "Hey, I am Sadik. For reaching me submit your message or send direct mail.",
-            "Your name: ",
-            "Your email: ",
-            "Subject: ",
-            "Message: ",
-            "Type 'okay' to send: ",
-          ]);
-          setCurrentTerminalLine(1);
+      if (field === "confirm") {
+        if (inputValues.confirm === otp) {
+          setStatusMessage("✅ Message sent successfully!");
+          setSent(true); // ✅ lock inputs
+          console.log("Form Data:", inputValues);
         } else {
-          setLines((prev) => [...prev, "❌ Invalid choice, type 1 or 2"]);
+          setStatusMessage(`❌ Wrong code, please type ${otp} to send!`);
         }
-      } else if (mode === "terminal") {
-        const fieldKeys = ["name", "email", "subject", "message", "confirm"];
-        const field = fieldKeys[currentTerminalLine - 1];
-        if (field) setInputFields((prev) => ({ ...prev, [field]: input }));
-
-        if (field === "confirm") {
-          if (input.toLowerCase() === "okay") {
-            handleClear();
-            setStatusMessage("✅ Message sent successfully!");
-          } else {
-            setStatusMessage("❌ Type 'okay' to send!");
-            return;
-          }
-        } else {
-          setCurrentTerminalLine((prev) => prev + 1);
-        }
-      } else if (mode === "easy") {
-        // If user typed the option in terminal input
-        const option = [
-          { name: "Phone", url: "tel:+8801875368551", info: "+8801875368551" },
-          { name: "Mail", url: "mailto:msadik3086@gmail.com", info: "to msadik3086@gmail.com" },
-          { name: "WhatsApp", url: "https://wa.me/+8801875368551", info: "Redirect" },
-          { name: "Messenger", url: "https://m.me/md.sadik.9822924", info: "Redirect" },
-        ].find(opt => opt.name.toLowerCase() === input.toLowerCase());
-
-        if (option) {
-          setLines(prev => [...prev, `You clicked: ${option.name +" "+ option.info}`]);
-          window.open(option.url, "_blank", "noopener,noreferrer");
-        } else {
-          setLines(prev => [...prev, "❌ Invalid option"]);
-        }
+        return;
       }
 
-      setInputValue("");
+      if (inputValues[field].trim() !== "") {
+        setCurrentLine((prev) => prev + 1);
+      }
     }
   };
 
+  const handleChange = (e, field) => {
+    if (sent) return; // ✅ block changes after success
+    setInputValues({ ...inputValues, [field]: e.target.value });
+  };
+
+  const handleClear = () => {
+    setInputValues({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      confirm: "",
+    });
+    setStatusMessage("Message not sent yet");
+    setCurrentLine(1);
+    setDisplayed(lines.slice(0, 1).map((l) => l.text));
+    setSent(false); // reset
+  };
+
   return (
-    <section id="contact" className="sm:min-h-screen py-15 bg-white overflow-hidden dark:bg-background">
+    <section
+      id="contact"
+      className="min-h-screen py-15 bg-white overflow-hidden dark:bg-background"
+    >
       <div className="mx-auto">
         <SectionHeader header="Contact ME" tittle="Happy to Collaborate" />
         <div className="container mx-auto px-4 flex justify-center items-center">
           <motion.div
-            className="w-full max-w-md sm:max-w-2xl shadow-lg overflow-hidden rounded-lg"
+            className="w-full max-w-2xl rounded-lg shadow-lg overflow-hidden"
             initial={{ opacity: 0, scale: 0.4 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
             {/* Terminal header */}
             <div className="flex items-center justify-between border-b border-gray-300 px-3 py-2 bg-gray-100 dark:bg-black">
-              <span className="dark:text-foreground text-sm font-mono font-bold">SADDY Terminal</span>
+              <span className="dark:text-foreground text-sm font-mono font-bold">
+                SADDY Terminal
+              </span>
               <button
                 onClick={handleClear}
-                className="w-6 h-6 flex items-center justify-center bg-red-600 hover:bg-red-700 text-white font-bold rounded"
+                className="w-5 h-5 flex items-center justify-center bg-red-600 
+                                hover:bg-red-700 rounded text-white font-bold leading-none"
               >
                 ×
               </button>
@@ -133,64 +143,50 @@ export default function ContactTerminal() {
             {/* Terminal body */}
             <div
               ref={terminalRef}
-              className="p-3 font-mono dark:text-green-400 h-96 sm:h-[24rem] overflow-y-auto border-t border-gray-300 bg-gray-50 dark:bg-black"
+              className="p-3 font-mono h-96 overflow-y-auto border-t shadow-full dark:bg-black/10"
             >
-              {/* Lines above prompt */}
-              {lines.map((line, idx) => (
-                <div key={idx} className="break-words mb-1 text-sm sm:text-base">
-                  {line}
+              {lines.map((line, index) => (
+                <div key={index} className="w-full mb-1 break-words">
+                  <span>{displayed[index]}</span>
+
+                  {line.field &&
+                    index === currentLine &&
+                    displayed[index] === line.text &&
+                    !sent && ( // ✅ hide input if sent
+                      <>
+                        {line.field === "message" ? (
+                          <textarea
+                            value={inputValues[line.field]}
+                            onChange={(e) => handleChange(e, line.field)}
+                            onKeyDown={(e) => handleKeyDown(e, line.field)}
+                            className="bg-transparent dark:text-yellow-400 outline-none w-full resize-none"
+                            rows={5}
+                            placeholder="Type your message and add #100# at the end"
+                            autoFocus
+                          />
+                        ) : (
+                          <input
+                            type="text"
+                            value={inputValues[line.field]}
+                            onChange={(e) => handleChange(e, line.field)}
+                            onKeyDown={(e) => handleKeyDown(e, line.field)}
+                            className="bg-transparent dark:text-yellow-400 outline-none w-full"
+                            autoFocus
+                          />
+                        )}
+                        <span className="animate-pulse">_</span>
+                      </>
+                    )}
+
+                  {line.field && index < currentLine && (
+                    <span>{inputValues[line.field]}</span>
+                  )}
                 </div>
               ))}
 
-              {/* Terminal form */}
-              {mode === "terminal" && (
-                <div>
-                  {terminalFlowLines.slice(0, currentTerminalLine).map((line, idx) => {
-                    let userInput = "";
-                    const fieldKeys = ["name", "email", "subject", "message", "confirm"];
-                    if (idx > 0) userInput = inputFields[fieldKeys[idx - 1]] || "";
-                    return (
-                      <div key={idx} className="mb-1 break-words text-sm sm:text-base">
-                        {line} {userInput}
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-
-              {/* Easy buttons */}
-              {mode === "easy" && (
-                <EasyMethodMenu
-                  logLine={(text) => setLines((prev) => [...prev, text])}
-                />
-              )}
-
-              {/* Input prompt */}
-              <div className="flex flex-col sm:flex-row mt-2">
-                <span className="mr-1 mb-1 sm:mb-0 text-sm sm:text-base break-words">
-                  {mode === null
-                    ? "msadik/portfolio: Select Your Choice"
-                    : mode === "easy"
-                      ? "Type a contact option or click a button:"
-                      : currentTerminalLine < terminalFlowLines.length
-                        ? terminalFlowLines[currentTerminalLine]
-                        : ""}
-                </span>
-                <input
-                  type="text"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  className="bg-transparent dark:text-green-400 outline-none flex-1 text-sm sm:text-base px-2 w-full sm:w-auto"
-                />
+              <div className="mt-4 dark:text-yellow-300 text-center font-mono">
+                {statusMessage}
               </div>
-
-              {/* Status */}
-              {statusMessage && (
-                <div className="mt-2 text-center dark:text-green-300 text-sm sm:text-base">
-                  {statusMessage}
-                </div>
-              )}
             </div>
           </motion.div>
         </div>
