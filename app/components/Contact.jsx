@@ -90,14 +90,14 @@ export default function ContactTerminal() {
       } else if (mode === "easy") {
         // If user typed the option in terminal input
         const option = [
-          { name: "Phone", url: "tel:+8801875368551" },
-          { name: "Mail", url: "mailto:msadik3086@gmail.com" },
-          { name: "WhatsApp", url: "https://wa.me/+8801875368551" },
-          { name: "Messenger", url: "https://m.me/md.sadik.9822924" },
+          { name: "Phone", url: "tel:+8801875368551", info: "+8801875368551" },
+          { name: "Mail", url: "mailto:msadik3086@gmail.com", info: "to msadik3086@gmail.com" },
+          { name: "WhatsApp", url: "https://wa.me/+8801875368551", info: "Redirect" },
+          { name: "Messenger", url: "https://m.me/md.sadik.9822924", info: "Redirect" },
         ].find(opt => opt.name.toLowerCase() === input.toLowerCase());
 
         if (option) {
-          setLines(prev => [...prev, `You clicked: ${option.name}`]);
+          setLines(prev => [...prev, `You clicked: ${option.name +" "+ option.info}`]);
           window.open(option.url, "_blank", "noopener,noreferrer");
         } else {
           setLines(prev => [...prev, "❌ Invalid option"]);

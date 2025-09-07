@@ -79,7 +79,7 @@ export default function Education() {
 
             {/* Courses */}
             <h4 className="font-semibold text-gray-700 mb-4 flex items-center gap-2 dark:text-foreground">
-              <FaBookOpen className="text-blue-500" /> Relevant Courses
+              <FaBookOpen className="text-yellow-500" /> Relevant Courses
             </h4>
 
             <motion.div
