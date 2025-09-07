@@ -9,7 +9,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen py-10 px-4 md:px-8 lg:px-10 bg-white overflow-hidden dark:bg-background"
+      className="min-h-screen py-15 px-4 md:px-8 lg:px-10 bg-white overflow-hidden dark:bg-background"
     >
       <div className="max-w-5xl mx-auto">
 
