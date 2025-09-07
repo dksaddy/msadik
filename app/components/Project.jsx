@@ -59,12 +59,14 @@ export default function Projects() {
   text-sm md:text-base 
   rounded-full font-bold 
   transition-all duration-300
-  "border cursor-pointer"
-  ${selectedCategory === category
-      ? "bg-green-500 text-white border-green-600"
+  border cursor-pointer
+  ${
+    selectedCategory === category
+      ? "bg-orange-500 text-white hover:bg-gray-400 hover:text-black"
       : "bg-yellow-200 dark:text-black hover:bg-gray-200 border-gray-300"
-    }
+  }
 `;
+
 
 
   const filteredProjects =
@@ -123,7 +125,7 @@ export default function Projects() {
               transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
             >
               <div className="relative h-full rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 overflow-hidden">
-                <div className="p-6">
+                <div className="p-6 sm:bg-white dark:sm:bg-background">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                     {/* Title + Role */}
                     <div>

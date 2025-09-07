@@ -51,7 +51,9 @@ export default function Certification() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
             >
-              <div className="relative h-full border border-gray-200 shadow-lg rounded-xl hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 p-6">
+              <div 
+              className="relative h-full border border-gray-200 shadow-lg rounded-xl hover:shadow-xl 
+              transition-all duration-300 group-hover:-translate-y-1 p-6 sm:bg-white dark:sm:bg-background">
 
                 {/* Header: Logo + Institution */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4 border-b border-gray-300 pb-4">

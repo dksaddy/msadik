@@ -55,7 +55,7 @@ export default function Education() {
 
           {/* Text Card */}
           <motion.div
-            className="rounded-2xl shadow-xl p-8 w-full max-w-xl border hover:shadow-2xl transition-shadow duration-300"
+            className="rounded-2xl shadow-xl p-8 w-full max-w-xl border hover:shadow-2xl transition-shadow duration-300 sm:bg-white dark:sm:bg-background"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}

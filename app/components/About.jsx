@@ -36,7 +36,7 @@ export default function About() {
 
           {/* Text Card */}
           <motion.div
-            className="relative z-10 md:w-3/4 text-gray-800 rounded-xl shadow-2xl p-8 md:p-12 border"
+            className="relative z-10 md:w-3/4 text-gray-800 rounded-xl shadow-2xl p-8 md:p-12 border sm:bg-white dark:sm:bg-background"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
