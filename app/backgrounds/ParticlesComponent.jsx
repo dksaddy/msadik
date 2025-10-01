@@ -24,7 +24,7 @@ const lightParticlesConfig = {
   background: { color: "transparent" },
   fpsLimit: 60,
   particles: {
-    number: { value: 50, density: { enable: true, area: 800 } },
+    number: { value: 30, density: { enable: true, area: 800 } },
     color: { value: "#1e293b" },
     links: {
       enable: true,
