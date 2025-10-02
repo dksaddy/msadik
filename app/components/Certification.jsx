@@ -34,7 +34,7 @@ export default function Certification() {
   return (
     <section 
     id="certification" 
-    className="min-h-screen py-16 px-4 md:px-8 lg:px-16 bg-white overflow-hidden dark:bg-background"
+    className="min-h-screen py-15 px-4 md:px-8 lg:px-16 bg-white overflow-hidden dark:bg-background"
     >
       <div className="max-w-7xl mx-auto">
         <SectionHeader
@@ -51,14 +51,16 @@ export default function Certification() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
             >
-              <div className="relative h-full border border-gray-200 shadow-lg rounded-xl hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 p-6">
+              <div 
+              className="relative h-full border border-gray-200 shadow-lg rounded-xl hover:shadow-xl 
+              transition-all duration-300 group-hover:-translate-y-1 p-6 sm:bg-white dark:sm:bg-background">
 
                 {/* Header: Logo + Institution */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4 border-b border-gray-300 pb-4">
                   <img
                     src={cert.logo}
                     alt="Institution Logo"
-                    className="w-15 h-15 rounded object-cover border border-blue-400"
+                    className="w-15 h-15 rounded object-cover border border-yellow-400"
                   />
                   <p className="text-sm font-semibold text-gray-800 dark:text-foreground">{cert.institution}</p>
                 </div>
@@ -103,7 +105,9 @@ export default function Certification() {
                     href={cert.verifyLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold rounded-md transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-foreground 
+                    hover:bg-gray-200 hover:text-black dark:text-black
+                    text-white text-xs font-semibold rounded-md transition-colors"
                   >
                     Verify Link
                     <svg

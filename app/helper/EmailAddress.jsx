@@ -1,13 +1,14 @@
 "use client"
 import { useState } from "react";
+import { GoCopy } from "react-icons/go";
+import { FaCheckDouble } from "react-icons/fa6";
 
-export default function EmailCopy({ hero }) {
+export default function EmailCopy() {
   const [copied, setCopied] = useState(false);
 
   const email = "msadik3086@gmail.com";
 
-  const styleFooter = "text-blue-600 hover:underline text-sm flex items-center justify-center md:justify-start space-x-2 cursor-pointer";
-  const styleHero = "text-blue-600 text-xs md:text-sm space-x-2 cursor-pointer";
+  const styleHero = "text-yellow-600 text-sm space-x-2 cursor-pointer flex p-1 font-medium";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email).then(() => {
@@ -19,26 +20,13 @@ export default function EmailCopy({ hero }) {
   return (
     <div
       onClick={handleCopy}
-      className={hero ? styleHero : styleFooter}
+      className={styleHero}
     >
-      {
-        !hero &&
-        <svg
-          className="w-4 h-4 text-gray-500"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          />
-        </svg>
-      }
       <span>{email}</span>
-      {copied && <span className="text-blue-600 text-xs font-bold">Copied!</span>}
+      {copied ? 
+      <FaCheckDouble className="mt-1"/> 
+      : 
+      <GoCopy className="mt-1"/>}
     </div>
   );
 }

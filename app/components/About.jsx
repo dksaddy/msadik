@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import SectionHeader from "../helper/SectionHeader";
-import GodRays from "../backgrounds/GodRay";
 
 export default function About() {
   return (
@@ -9,8 +8,6 @@ export default function About() {
       id="about"
       className="min-h-screen py-15 relative overflow-hidden"
     >
-      {/* God Rays Background */}
-      {/*<GodRays />*/}
 
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeader
@@ -39,7 +36,7 @@ export default function About() {
 
           {/* Text Card */}
           <motion.div
-            className="relative z-10 md:w-3/4 text-gray-800 rounded-xl shadow-2xl p-8 md:p-12 border"
+            className="relative z-10 md:w-3/4 text-gray-800 rounded-xl shadow-2xl p-8 md:p-12 border sm:bg-white dark:sm:bg-background"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}

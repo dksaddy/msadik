@@ -31,8 +31,8 @@ export default function MatrixClock() {
         {Array.from({ length: totalBoxes }).map((_, i) => {
           const isFilled = i < filledCount;
           const boxColor = isFilled
-            ? "bg-black dark:bg-white"
-            : "bg-green-500 dark:bg-green-500";
+            ? "bg-black/80 dark:bg-white/80"
+            : "bg-yellow-500 dark:bg-yellow-500";
 
           return (
             <div

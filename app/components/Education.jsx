@@ -1,10 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaBookOpen } from "react-icons/fa";
 import SectionHeader from '../helper/SectionHeader';
 import { containerVariants, itemVariants } from "../utils/SpanAnimation";
-import DreamDots from "../backgrounds/DreamDot";
 
 export default function Education() {
   const education = {
@@ -20,10 +18,7 @@ export default function Education() {
       "System Analysis and Design",
       "Human Computer Interaction",
       "Database Management System",
-      "Object Oriented Programming",
       "Data Structure & Algorithm",
-      "Web Technology",
-      "Operating System",
     ],
   };
 
@@ -60,7 +55,7 @@ export default function Education() {
 
           {/* Text Card */}
           <motion.div
-            className="rounded-2xl shadow-xl p-8 w-full max-w-xl border hover:shadow-2xl transition-shadow duration-300 bg-white dark:bg-card"
+            className="rounded-2xl shadow-xl p-8 w-full max-w-xl border hover:shadow-2xl transition-shadow duration-300 sm:bg-white dark:sm:bg-background"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -69,7 +64,7 @@ export default function Education() {
               <h3 className="text-2xl font-bold text-gray-800 mb-2 dark:text-foreground">
                 {education.degree}
               </h3>
-              <p className="text-gray-600 font-medium dark:text-foreground">
+              <p className="text-gray-800 font-medium dark:text-foreground">
                 {education.institution}
               </p>
               <span className="text-gray-500">{education.year}</span>
@@ -84,7 +79,7 @@ export default function Education() {
 
             {/* Courses */}
             <h4 className="font-semibold text-gray-700 mb-4 flex items-center gap-2 dark:text-foreground">
-              <FaBookOpen className="text-blue-500" /> Relevant Courses
+              <FaBookOpen className="text-yellow-500" /> Relevant Courses
             </h4>
 
             <motion.div
@@ -98,7 +93,7 @@ export default function Education() {
                 <motion.span
                   key={index}
                   variants={itemVariants}
-                  className="px-3 py-1 text-sm font-medium bg-yellow-200 text-gray-800 rounded-full hover:bg-blue-100 transition-colors duration-200 dark:bg-yellow-700 dark:text-gray-100"
+                  className="px-3 py-1 text-sm font-medium bg-yellow-200 text-gray-800 rounded-full"
                 >
                   {course}
                 </motion.span>

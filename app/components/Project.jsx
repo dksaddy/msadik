@@ -51,7 +51,7 @@ export default function Projects() {
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
-              className="group relative"
+              className="group relative bg-white dark:bg-background"
               initial={{ opacity: 0, x: idx % 2 === 0 ? -80 : 80 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}

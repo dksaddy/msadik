@@ -11,10 +11,10 @@ export default function SectionHeader({header, tittle, mb="mb-10"}) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             >
-                <h2 className="text-4xl md:text-5xl font-bold mb-3">
+                <h2 className="text-4xl md:text-5xl font-bold mb-3 text-black/80 dark:text-white/80">
                     {header}
                 </h2>
-                <p className="text-gray-500 max-w-2xl mx-auto">
+                <p className="text-gray-500 dark:text-gray-200 max-w-2xl mx-auto">
                     {tittle}
                 </p>
             </motion.div>
