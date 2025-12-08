@@ -9,7 +9,7 @@ export default function Education() {
     degree: "B.Sc. in Computer Science & Engineering",
     institution: "United International University",
     year: "2020 - 2024",
-    details: "CGPA: 3.05/4.00",
+    details: "CGPA: 3.12/4.00",
     courses: [
       "Software Quality Assurance",
       "Software Architecture",
