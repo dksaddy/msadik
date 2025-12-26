@@ -9,16 +9,12 @@ export default function Education() {
     degree: "B.Sc. in Computer Science & Engineering",
     institution: "United International University",
     year: "2020 - 2024",
-    details: "CGPA: 3.12/4.00",
     courses: [
       "Software Quality Assurance",
       "Software Architecture",
       "Software Engineering",
-      "Mobile Application Development",
       "System Analysis and Design",
       "Human Computer Interaction",
-      "Database Management System",
-      "Data Structure & Algorithm",
     ],
   };
 
@@ -68,8 +64,6 @@ export default function Education() {
                 {education.institution}
               </p>
               <span className="text-gray-500">{education.year}</span>
-              <span className="text-gray-500 ml-2">|</span>
-              <span className="text-gray-500 ml-2">{education.details}</span>
             </div>
 
             <p className="text-gray-700 mt-2 mb-6 dark:text-foreground">
