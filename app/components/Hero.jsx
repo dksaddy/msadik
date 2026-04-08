@@ -116,7 +116,7 @@ export default function Hero() {
             <FaGithubSquare className="lg:text-4xl text-3xl dark:text-foreground" />
           </a>
 
-          <a href="https://linkedin.com/in/msadik3086" target="_blank">
+          <a href="https://linkedin.com/in/mm-sadik" target="_blank">
             <FaLinkedin className="lg:text-4xl text-3xl dark:text-foreground" />
           </a>
 
